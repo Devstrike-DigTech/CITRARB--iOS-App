@@ -7,13 +7,92 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		457168E22A66871B00FDBBE8 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457168E12A66871B00FDBBE8 /* MenuItemView.swift */; };
+		457168E42A668FA900FDBBE8 /* citrarb_eye_witness_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168E32A668FA900FDBBE8 /* citrarb_eye_witness_menu.json */; };
+		457168E62A66908600FDBBE8 /* citrarb_music_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168E52A66908600FDBBE8 /* citrarb_music_menu.json */; };
+		457168E82A6690A100FDBBE8 /* citrarb_news_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168E72A6690A100FDBBE8 /* citrarb_news_menu.json */; };
+		457168EA2A6690A800FDBBE8 /* citrarb_connect_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168E92A6690A800FDBBE8 /* citrarb_connect_menu.json */; };
+		457168EC2A6690B100FDBBE8 /* citrarb_events_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168EB2A6690B100FDBBE8 /* citrarb_events_menu.json */; };
+		457168EE2A6690BA00FDBBE8 /* citrarb_market_place_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168ED2A6690BA00FDBBE8 /* citrarb_market_place_menu.json */; };
+		457168F02A6690CF00FDBBE8 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168EF2A6690CF00FDBBE8 /* loading.json */; };
+		457168F22A66911F00FDBBE8 /* citrarb_not_logged_in.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168F12A66911F00FDBBE8 /* citrarb_not_logged_in.json */; };
+		457168F42A66913000FDBBE8 /* citrarb_tv_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168F32A66913000FDBBE8 /* citrarb_tv_menu.json */; };
+		457168F62A66913B00FDBBE8 /* citrarb_members_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168F52A66913B00FDBBE8 /* citrarb_members_menu.json */; };
+		457168F82A66914200FDBBE8 /* citrarb_uploads_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168F72A66914200FDBBE8 /* citrarb_uploads_menu.json */; };
+		457168FA2A66916000FDBBE8 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457168F92A66916000FDBBE8 /* LandingView.swift */; };
+		457168FD2A66A93100FDBBE8 /* LandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457168FC2A66A93100FDBBE8 /* LandingHeaderView.swift */; };
+		457168FF2A66A9F200FDBBE8 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457168FE2A66A9F200FDBBE8 /* SplashScreen.storyboard */; };
+		4589FCD42A66B86A00D69572 /* TVListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589FCD32A66B86A00D69572 /* TVListView.swift */; };
+		45A3E2382A6568D7007CE9BE /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2372A6568D7007CE9BE /* LottieView.swift */; };
+		45A3E2462A65805A007CE9BE /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2452A65805A007CE9BE /* ProfileViewModel.swift */; };
+		45A3E2482A658069007CE9BE /* PagentryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2472A658069007CE9BE /* PagentryViewModel.swift */; };
+		45A3E24A2A658074007CE9BE /* EventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2492A658074007CE9BE /* EventsViewModel.swift */; };
+		45A3E24C2A658081007CE9BE /* UploadsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E24B2A658081007CE9BE /* UploadsViewModel.swift */; };
+		45A3E24E2A658092007CE9BE /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E24D2A658092007CE9BE /* MusicViewModel.swift */; };
+		45A3E2502A6580AC007CE9BE /* MarketPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E24F2A6580AC007CE9BE /* MarketPlaceViewModel.swift */; };
+		45A3E2522A6580F9007CE9BE /* ConnectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2512A6580F9007CE9BE /* ConnectViewModel.swift */; };
+		45A3E2542A658106007CE9BE /* MembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2532A658106007CE9BE /* MembersViewModel.swift */; };
+		45A3E2562A658111007CE9BE /* EyeWitnessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2552A658111007CE9BE /* EyeWitnessViewModel.swift */; };
+		45A3E2582A658121007CE9BE /* TVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2572A658121007CE9BE /* TVViewModel.swift */; };
+		45A3E25A2A65812B007CE9BE /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2592A65812B007CE9BE /* NewsViewModel.swift */; };
+		45A3E25C2A65815F007CE9BE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E25B2A65815F007CE9BE /* LoginView.swift */; };
+		45A3E25E2A65816B007CE9BE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E25D2A65816B007CE9BE /* RegisterView.swift */; };
+		45A3E2602A658175007CE9BE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E25F2A658175007CE9BE /* ProfileView.swift */; };
+		45A3E2622A658191007CE9BE /* ProfileAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2612A658191007CE9BE /* ProfileAPI.swift */; };
+		45A3E2642A658681007CE9BE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2632A658681007CE9BE /* Common.swift */; };
+		45A3E2672A6587FB007CE9BE /* TLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2662A6587FB007CE9BE /* TLButton.swift */; };
+		45A3E2692A658A88007CE9BE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2682A658A88007CE9BE /* HeaderView.swift */; };
+		45A3E26D2A659235007CE9BE /* NewsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E26C2A659235007CE9BE /* NewsItemView.swift */; };
+		45A3E26F2A65924B007CE9BE /* CustomURLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E26E2A65924B007CE9BE /* CustomURLImage.swift */; };
+		45A3E2712A6592F2007CE9BE /* NewsItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2702A6592F2007CE9BE /* NewsItemData.swift */; };
+		45A3E2732A6597D7007CE9BE /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2722A6597D7007CE9BE /* NewsListView.swift */; };
 		45CCA00F2A651F450071C5C6 /* CITRARBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCA00E2A651F450071C5C6 /* CITRARBApp.swift */; };
 		45CCA0112A651F450071C5C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCA0102A651F450071C5C6 /* ContentView.swift */; };
 		45CCA0132A651F4B0071C5C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CCA0122A651F4B0071C5C6 /* Assets.xcassets */; };
 		45CCA0162A651F4B0071C5C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CCA0152A651F4B0071C5C6 /* Preview Assets.xcassets */; };
+		45FC3BC32A666C99007A7CC0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 45FC3BC22A666C99007A7CC0 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		457168E12A66871B00FDBBE8 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		457168E32A668FA900FDBBE8 /* citrarb_eye_witness_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_eye_witness_menu.json; sourceTree = "<group>"; };
+		457168E52A66908600FDBBE8 /* citrarb_music_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_music_menu.json; sourceTree = "<group>"; };
+		457168E72A6690A100FDBBE8 /* citrarb_news_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_news_menu.json; sourceTree = "<group>"; };
+		457168E92A6690A800FDBBE8 /* citrarb_connect_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_connect_menu.json; sourceTree = "<group>"; };
+		457168EB2A6690B100FDBBE8 /* citrarb_events_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_events_menu.json; sourceTree = "<group>"; };
+		457168ED2A6690BA00FDBBE8 /* citrarb_market_place_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_market_place_menu.json; sourceTree = "<group>"; };
+		457168EF2A6690CF00FDBBE8 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		457168F12A66911F00FDBBE8 /* citrarb_not_logged_in.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_not_logged_in.json; sourceTree = "<group>"; };
+		457168F32A66913000FDBBE8 /* citrarb_tv_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_tv_menu.json; sourceTree = "<group>"; };
+		457168F52A66913B00FDBBE8 /* citrarb_members_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_members_menu.json; sourceTree = "<group>"; };
+		457168F72A66914200FDBBE8 /* citrarb_uploads_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_uploads_menu.json; sourceTree = "<group>"; };
+		457168F92A66916000FDBBE8 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		457168FC2A66A93100FDBBE8 /* LandingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingHeaderView.swift; sourceTree = "<group>"; };
+		457168FE2A66A9F200FDBBE8 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		4589FCD32A66B86A00D69572 /* TVListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVListView.swift; sourceTree = "<group>"; };
+		45A3E2372A6568D7007CE9BE /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		45A3E2452A65805A007CE9BE /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		45A3E2472A658069007CE9BE /* PagentryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagentryViewModel.swift; sourceTree = "<group>"; };
+		45A3E2492A658074007CE9BE /* EventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewModel.swift; sourceTree = "<group>"; };
+		45A3E24B2A658081007CE9BE /* UploadsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadsViewModel.swift; sourceTree = "<group>"; };
+		45A3E24D2A658092007CE9BE /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
+		45A3E24F2A6580AC007CE9BE /* MarketPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceViewModel.swift; sourceTree = "<group>"; };
+		45A3E2512A6580F9007CE9BE /* ConnectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewModel.swift; sourceTree = "<group>"; };
+		45A3E2532A658106007CE9BE /* MembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewModel.swift; sourceTree = "<group>"; };
+		45A3E2552A658111007CE9BE /* EyeWitnessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeWitnessViewModel.swift; sourceTree = "<group>"; };
+		45A3E2572A658121007CE9BE /* TVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVViewModel.swift; sourceTree = "<group>"; };
+		45A3E2592A65812B007CE9BE /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		45A3E25B2A65815F007CE9BE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		45A3E25D2A65816B007CE9BE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		45A3E25F2A658175007CE9BE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		45A3E2612A658191007CE9BE /* ProfileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAPI.swift; sourceTree = "<group>"; };
+		45A3E2632A658681007CE9BE /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		45A3E2662A6587FB007CE9BE /* TLButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLButton.swift; sourceTree = "<group>"; };
+		45A3E2682A658A88007CE9BE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		45A3E26C2A659235007CE9BE /* NewsItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemView.swift; sourceTree = "<group>"; };
+		45A3E26E2A65924B007CE9BE /* CustomURLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLImage.swift; sourceTree = "<group>"; };
+		45A3E2702A6592F2007CE9BE /* NewsItemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemData.swift; sourceTree = "<group>"; };
+		45A3E2722A6597D7007CE9BE /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
 		45CCA00B2A651F450071C5C6 /* CITRARB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CITRARB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CCA00E2A651F450071C5C6 /* CITRARBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CITRARBApp.swift; sourceTree = "<group>"; };
 		45CCA0102A651F450071C5C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,12 +105,193 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45FC3BC32A666C99007A7CC0 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		457168E02A6686F500FDBBE8 /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				457168E12A66871B00FDBBE8 /* MenuItemView.swift */,
+				457168F92A66916000FDBBE8 /* LandingView.swift */,
+				457168FC2A66A93100FDBBE8 /* LandingHeaderView.swift */,
+				457168FE2A66A9F200FDBBE8 /* SplashScreen.storyboard */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		45A3E2292A6567C1007CE9BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E22A2A6567CE007CE9BE /* LottieFiles */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45A3E22A2A6567CE007CE9BE /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				457168F72A66914200FDBBE8 /* citrarb_uploads_menu.json */,
+				457168F52A66913B00FDBBE8 /* citrarb_members_menu.json */,
+				457168F32A66913000FDBBE8 /* citrarb_tv_menu.json */,
+				457168F12A66911F00FDBBE8 /* citrarb_not_logged_in.json */,
+				457168EF2A6690CF00FDBBE8 /* loading.json */,
+				457168ED2A6690BA00FDBBE8 /* citrarb_market_place_menu.json */,
+				457168EB2A6690B100FDBBE8 /* citrarb_events_menu.json */,
+				457168E92A6690A800FDBBE8 /* citrarb_connect_menu.json */,
+				457168E72A6690A100FDBBE8 /* citrarb_news_menu.json */,
+				457168E52A66908600FDBBE8 /* citrarb_music_menu.json */,
+				457168E32A668FA900FDBBE8 /* citrarb_eye_witness_menu.json */,
+			);
+			path = LottieFiles;
+			sourceTree = "<group>";
+		};
+		45A3E2352A65688F007CE9BE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E26E2A65924B007CE9BE /* CustomURLImage.swift */,
+				45A3E2652A6587DC007CE9BE /* ViewsUtils */,
+				45A3E2632A658681007CE9BE /* Common.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		45A3E2362A65689D007CE9BE /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				457168E02A6686F500FDBBE8 /* Landing */,
+				45A3E2442A658033007CE9BE /* Profile */,
+				45A3E2432A65802B007CE9BE /* Settings */,
+				45A3E2422A657FFE007CE9BE /* Pagentry (Hookup) */,
+				45A3E2412A657FE0007CE9BE /* Events */,
+				45A3E2402A657FD5007CE9BE /* Uploads */,
+				45A3E23F2A657FCA007CE9BE /* Music */,
+				45A3E23E2A657FB6007CE9BE /* Marketplace */,
+				45A3E23D2A657F9B007CE9BE /* Connect (Occupation) */,
+				45A3E23C2A657F91007CE9BE /* Members */,
+				45A3E23B2A657F81007CE9BE /* EyeWitness */,
+				45A3E23A2A657F74007CE9BE /* TV */,
+				45A3E2392A657F69007CE9BE /* News */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		45A3E2392A657F69007CE9BE /* News */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E2592A65812B007CE9BE /* NewsViewModel.swift */,
+				45A3E26C2A659235007CE9BE /* NewsItemView.swift */,
+				45A3E2702A6592F2007CE9BE /* NewsItemData.swift */,
+				45A3E2722A6597D7007CE9BE /* NewsListView.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		45A3E23A2A657F74007CE9BE /* TV */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E2572A658121007CE9BE /* TVViewModel.swift */,
+				4589FCD32A66B86A00D69572 /* TVListView.swift */,
+			);
+			path = TV;
+			sourceTree = "<group>";
+		};
+		45A3E23B2A657F81007CE9BE /* EyeWitness */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E2552A658111007CE9BE /* EyeWitnessViewModel.swift */,
+			);
+			path = EyeWitness;
+			sourceTree = "<group>";
+		};
+		45A3E23C2A657F91007CE9BE /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E2532A658106007CE9BE /* MembersViewModel.swift */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		45A3E23D2A657F9B007CE9BE /* Connect (Occupation) */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E2512A6580F9007CE9BE /* ConnectViewModel.swift */,
+			);
+			path = "Connect (Occupation)";
+			sourceTree = "<group>";
+		};
+		45A3E23E2A657FB6007CE9BE /* Marketplace */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E24F2A6580AC007CE9BE /* MarketPlaceViewModel.swift */,
+			);
+			path = Marketplace;
+			sourceTree = "<group>";
+		};
+		45A3E23F2A657FCA007CE9BE /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E24D2A658092007CE9BE /* MusicViewModel.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		45A3E2402A657FD5007CE9BE /* Uploads */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E24B2A658081007CE9BE /* UploadsViewModel.swift */,
+			);
+			path = Uploads;
+			sourceTree = "<group>";
+		};
+		45A3E2412A657FE0007CE9BE /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E2492A658074007CE9BE /* EventsViewModel.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		45A3E2422A657FFE007CE9BE /* Pagentry (Hookup) */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E2472A658069007CE9BE /* PagentryViewModel.swift */,
+			);
+			path = "Pagentry (Hookup)";
+			sourceTree = "<group>";
+		};
+		45A3E2432A65802B007CE9BE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		45A3E2442A658033007CE9BE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E2452A65805A007CE9BE /* ProfileViewModel.swift */,
+				45A3E25B2A65815F007CE9BE /* LoginView.swift */,
+				45A3E25D2A65816B007CE9BE /* RegisterView.swift */,
+				45A3E25F2A658175007CE9BE /* ProfileView.swift */,
+				45A3E2612A658191007CE9BE /* ProfileAPI.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		45A3E2652A6587DC007CE9BE /* ViewsUtils */ = {
+			isa = PBXGroup;
+			children = (
+				45A3E2682A658A88007CE9BE /* HeaderView.swift */,
+				45A3E2662A6587FB007CE9BE /* TLButton.swift */,
+				45A3E2372A6568D7007CE9BE /* LottieView.swift */,
+			);
+			path = ViewsUtils;
+			sourceTree = "<group>";
+		};
 		45CCA0022A651F440071C5C6 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +311,9 @@
 		45CCA00D2A651F450071C5C6 /* CITRARB */ = {
 			isa = PBXGroup;
 			children = (
+				45A3E2362A65689D007CE9BE /* Features */,
+				45A3E2352A65688F007CE9BE /* Utils */,
+				45A3E2292A6567C1007CE9BE /* Resources */,
 				45CCA00E2A651F450071C5C6 /* CITRARBApp.swift */,
 				45CCA0102A651F450071C5C6 /* ContentView.swift */,
 				45CCA0122A651F4B0071C5C6 /* Assets.xcassets */,
@@ -83,6 +346,9 @@
 			dependencies = (
 			);
 			name = CITRARB;
+			packageProductDependencies = (
+				45FC3BC22A666C99007A7CC0 /* Lottie */,
+			);
 			productName = CITRARB;
 			productReference = 45CCA00B2A651F450071C5C6 /* CITRARB.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +377,9 @@
 				Base,
 			);
 			mainGroup = 45CCA0022A651F440071C5C6;
+			packageReferences = (
+				45FC3BC12A666C99007A7CC0 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 45CCA00C2A651F450071C5C6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +394,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				457168EE2A6690BA00FDBBE8 /* citrarb_market_place_menu.json in Resources */,
 				45CCA0162A651F4B0071C5C6 /* Preview Assets.xcassets in Resources */,
+				457168EA2A6690A800FDBBE8 /* citrarb_connect_menu.json in Resources */,
 				45CCA0132A651F4B0071C5C6 /* Assets.xcassets in Resources */,
+				457168F82A66914200FDBBE8 /* citrarb_uploads_menu.json in Resources */,
+				457168F22A66911F00FDBBE8 /* citrarb_not_logged_in.json in Resources */,
+				457168E62A66908600FDBBE8 /* citrarb_music_menu.json in Resources */,
+				457168EC2A6690B100FDBBE8 /* citrarb_events_menu.json in Resources */,
+				457168E82A6690A100FDBBE8 /* citrarb_news_menu.json in Resources */,
+				457168E42A668FA900FDBBE8 /* citrarb_eye_witness_menu.json in Resources */,
+				457168F42A66913000FDBBE8 /* citrarb_tv_menu.json in Resources */,
+				457168F62A66913B00FDBBE8 /* citrarb_members_menu.json in Resources */,
+				457168F02A6690CF00FDBBE8 /* loading.json in Resources */,
+				457168FF2A66A9F200FDBBE8 /* SplashScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +418,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A3E2562A658111007CE9BE /* EyeWitnessViewModel.swift in Sources */,
+				45A3E2482A658069007CE9BE /* PagentryViewModel.swift in Sources */,
+				457168E22A66871B00FDBBE8 /* MenuItemView.swift in Sources */,
+				457168FD2A66A93100FDBBE8 /* LandingHeaderView.swift in Sources */,
 				45CCA0112A651F450071C5C6 /* ContentView.swift in Sources */,
+				45A3E2712A6592F2007CE9BE /* NewsItemData.swift in Sources */,
+				45A3E25C2A65815F007CE9BE /* LoginView.swift in Sources */,
 				45CCA00F2A651F450071C5C6 /* CITRARBApp.swift in Sources */,
+				45A3E2502A6580AC007CE9BE /* MarketPlaceViewModel.swift in Sources */,
+				45A3E26D2A659235007CE9BE /* NewsItemView.swift in Sources */,
+				457168FA2A66916000FDBBE8 /* LandingView.swift in Sources */,
+				45A3E24A2A658074007CE9BE /* EventsViewModel.swift in Sources */,
+				45A3E2582A658121007CE9BE /* TVViewModel.swift in Sources */,
+				45A3E2622A658191007CE9BE /* ProfileAPI.swift in Sources */,
+				45A3E2672A6587FB007CE9BE /* TLButton.swift in Sources */,
+				45A3E24E2A658092007CE9BE /* MusicViewModel.swift in Sources */,
+				45A3E2602A658175007CE9BE /* ProfileView.swift in Sources */,
+				45A3E2462A65805A007CE9BE /* ProfileViewModel.swift in Sources */,
+				45A3E26F2A65924B007CE9BE /* CustomURLImage.swift in Sources */,
+				45A3E2692A658A88007CE9BE /* HeaderView.swift in Sources */,
+				45A3E2732A6597D7007CE9BE /* NewsListView.swift in Sources */,
+				45A3E2522A6580F9007CE9BE /* ConnectViewModel.swift in Sources */,
+				45A3E24C2A658081007CE9BE /* UploadsViewModel.swift in Sources */,
+				4589FCD42A66B86A00D69572 /* TVListView.swift in Sources */,
+				45A3E25A2A65812B007CE9BE /* NewsViewModel.swift in Sources */,
+				45A3E2642A658681007CE9BE /* Common.swift in Sources */,
+				45A3E25E2A65816B007CE9BE /* RegisterView.swift in Sources */,
+				45A3E2542A658106007CE9BE /* MembersViewModel.swift in Sources */,
+				45A3E2382A6568D7007CE9BE /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +486,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -238,6 +547,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -270,11 +580,13 @@
 				DEVELOPMENT_TEAM = ZG65SS3WVL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Coal City Connect";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,11 +611,13 @@
 				DEVELOPMENT_TEAM = ZG65SS3WVL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Coal City Connect";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +653,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45FC3BC12A666C99007A7CC0 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45FC3BC22A666C99007A7CC0 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45FC3BC12A666C99007A7CC0 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45CCA0032A651F440071C5C6 /* Project object */;
 }
