@@ -9,10 +9,12 @@ import SwiftUI
 
 struct LandingView: View {
     
+    @State private var isPresentingNewScreen = false
     
     
     var body: some View {
         NavigationView{
+          
             ZStack{
                 Image("bgDay")
                     .aspectRatio(contentMode: .fill)
@@ -21,18 +23,20 @@ struct LandingView: View {
                 VStack{
                     
                     HStack{
-                        VStack{
-                            Text("MCM")
-                                .bold()
-                            Image(systemName: "person.circle.fill")
-                                .font(.largeTitle)
-                                .aspectRatio(contentMode: .fill)
-                            Text("John Doe")
-                        }
-                        .frame(width: 120)
-                        .onTapGesture {
-                            
-                        }
+                            VStack{
+                                Text("MCM")
+                                    .bold()
+                                Image(systemName: "person.circle.fill")
+                                    .font(.largeTitle)
+                                    .aspectRatio(contentMode: .fill)
+                                Text("John Doe")
+                            }
+                            .frame(width: 120)
+                    
+                       
+//                        .onTapGesture {
+//                            
+//                        }
                         VStack{
                             Text("WCW")
                                 .bold()
@@ -52,9 +56,7 @@ struct LandingView: View {
                     
                     HStack{
                         ZStack{
-                            MenuItemView(animation: "citrarb_news_menu", action: {
-                                
-                            })
+                            MenuItemView(animation: "citrarb_news_menu")
                             Text("News")
                                 .bold()
                                 .foregroundColor(.white)
@@ -66,26 +68,26 @@ struct LandingView: View {
                         .cornerRadius(30)
                         .shadow(color: NEWS_COLOR,radius: 5)
                         
-                        ZStack{
-                            MenuItemView(animation: "citrarb_tv_menu", action: {
-                                TVListView()
-                            })
-                            Text("TV")
-                                .bold()
-                                .foregroundColor(.white)
-                                .offset(y: 50)
-                                .font(.system(size: 18))
-                                .padding(8)
+                        NavigationLink(destination: TVListView()){
+                            ZStack{
+                                MenuItemView(animation: "citrarb_tv_menu")
+                                Text("TV")
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .offset(y: 50)
+                                    .font(.system(size: 18))
+                                    .padding(8)
+                            }
+                            .background(TV_COLOR)
+                            .cornerRadius(30)
+                            .shadow(color: TV_COLOR,radius: 5)
+                            
                         }
-                        .background(TV_COLOR)
-                        .cornerRadius(30)
-                        .shadow(color: TV_COLOR,radius: 5)
+                        
                         
                         
                         ZStack{
-                            MenuItemView(animation: "citrarb_eye_witness_menu", action: {
-                                
-                            })
+                            MenuItemView(animation: "citrarb_eye_witness_menu")
                             Text("Eye Witness")
                                 .bold()
                                 .foregroundColor(.white)
@@ -102,9 +104,7 @@ struct LandingView: View {
                     
                     HStack{
                         ZStack{
-                            MenuItemView(animation: "citrarb_members_menu", action: {
-                                
-                            })
+                            MenuItemView(animation: "citrarb_members_menu")
                             Text("Members")
                                 .bold()
                                 .foregroundColor(.white)
@@ -116,9 +116,7 @@ struct LandingView: View {
                         .cornerRadius(30)
                         .shadow(color: MEMBERS_COLOR,radius: 5)
                         ZStack{
-                            MenuItemView(animation: "citrarb_market_place_menu", action: {
-                                
-                            })
+                            MenuItemView(animation: "citrarb_market_place_menu")
                             Text("Marketplace")
                                 .bold()
                                 .foregroundColor(.white)
@@ -130,9 +128,7 @@ struct LandingView: View {
                         .cornerRadius(30)
                         .shadow(color: MARKET_PLACE_COLOR,radius: 5)
                         ZStack{
-                            MenuItemView(animation: "citrarb_events_menu", action: {
-                                
-                            })
+                            MenuItemView(animation: "citrarb_events_menu")
                             Text("Events")
                                 .bold()
                                 .foregroundColor(.white)
@@ -149,9 +145,7 @@ struct LandingView: View {
                     
                     HStack{
                         ZStack{
-                            MenuItemView(animation: "citrarb_connect_menu", action: {
-                                
-                            })
+                            MenuItemView(animation: "citrarb_connect_menu")
                             Text("Connect")
                                 .bold()
                                 .foregroundColor(.white)
@@ -163,9 +157,7 @@ struct LandingView: View {
                         .cornerRadius(30)
                         .shadow(color: CONNECT_COLOR,radius: 5)
                         ZStack{
-                            MenuItemView(animation: "citrarb_music_menu", action: {
-                                
-                            })
+                            MenuItemView(animation: "citrarb_music_menu")
                             Text("Music")
                                 .bold()
                                 .foregroundColor(.white)
@@ -177,9 +169,7 @@ struct LandingView: View {
                         .cornerRadius(30)
                         .shadow(color: MUSIC_COLOR,radius: 5)
                         ZStack{
-                            MenuItemView(animation: "citrarb_uploads_menu", action: {
-                                
-                            })
+                            MenuItemView(animation: "citrarb_uploads_menu")
                             Text("Uploads")
                                 .bold()
                                 .foregroundColor(.white)
@@ -196,7 +186,7 @@ struct LandingView: View {
                 
             }
         }
-        .navigationTitle("Title")
+        .navigationBarTitle("Title")
     }
 }
 

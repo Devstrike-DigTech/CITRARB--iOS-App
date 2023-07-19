@@ -28,9 +28,10 @@ struct CustomURLImage: View{
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 130, height: 70)
                 .background(Color.gray)
+                .cornerRadius(30)
         }else{
             //placeholder for if there is no image in the fetched data
-            Image(systemName: "news")
+            Image(systemName: "tv")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 130, height: 70)

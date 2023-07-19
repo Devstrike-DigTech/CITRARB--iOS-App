@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public var BASE_URL = "https://citrab.onrender.com/"
+public var BASE_URL = "https://citrab.onrender.com/api/"
 public var APP_NAME = "Coal City Connect"
 public var NEWS_COLOR = Color.blue
 public var TV_COLOR = Color.red

@@ -11,7 +11,6 @@ import Lottie
 struct MenuItemView: View {
     
     let animation: String
-    let action: () -> Void
     
     var body: some View {
         ZStack{
@@ -21,16 +20,11 @@ struct MenuItemView: View {
         .frame(width: 120, height: 130)
         .cornerRadius(30)
         .shadow(radius: 30)
-        .onTapGesture {
-            action()
-        }
     }
 }
 
 struct MenuItemView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemView(animation: "citrarb_market_place_menu", action: {
-            
-        })
+        MenuItemView(animation: "citrarb_market_place_menu")
     }
 }

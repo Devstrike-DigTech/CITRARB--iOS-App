@@ -22,6 +22,9 @@
 		457168FA2A66916000FDBBE8 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457168F92A66916000FDBBE8 /* LandingView.swift */; };
 		457168FD2A66A93100FDBBE8 /* LandingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457168FC2A66A93100FDBBE8 /* LandingHeaderView.swift */; };
 		457168FF2A66A9F200FDBBE8 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 457168FE2A66A9F200FDBBE8 /* SplashScreen.storyboard */; };
+		458222B32A67D651006B9058 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 458222B22A67D651006B9058 /* CachedAsyncImage */; };
+		458222B62A67D713006B9058 /* TVData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458222B52A67D713006B9058 /* TVData.swift */; };
+		458222B82A67DE0A006B9058 /* TVAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458222B72A67DE0A006B9058 /* TVAPI.swift */; };
 		4589FCD42A66B86A00D69572 /* TVListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4589FCD32A66B86A00D69572 /* TVListView.swift */; };
 		45A3E2382A6568D7007CE9BE /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2372A6568D7007CE9BE /* LottieView.swift */; };
 		45A3E2462A65805A007CE9BE /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3E2452A65805A007CE9BE /* ProfileViewModel.swift */; };
@@ -50,6 +53,7 @@
 		45CCA0112A651F450071C5C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCA0102A651F450071C5C6 /* ContentView.swift */; };
 		45CCA0132A651F4B0071C5C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CCA0122A651F4B0071C5C6 /* Assets.xcassets */; };
 		45CCA0162A651F4B0071C5C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CCA0152A651F4B0071C5C6 /* Preview Assets.xcassets */; };
+		45EF81AE2A67D15F00946B88 /* TVListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EF81AD2A67D15F00946B88 /* TVListItemView.swift */; };
 		45FC3BC32A666C99007A7CC0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 45FC3BC22A666C99007A7CC0 /* Lottie */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,8 @@
 		457168F92A66916000FDBBE8 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		457168FC2A66A93100FDBBE8 /* LandingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingHeaderView.swift; sourceTree = "<group>"; };
 		457168FE2A66A9F200FDBBE8 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		458222B52A67D713006B9058 /* TVData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVData.swift; sourceTree = "<group>"; };
+		458222B72A67DE0A006B9058 /* TVAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVAPI.swift; sourceTree = "<group>"; };
 		4589FCD32A66B86A00D69572 /* TVListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVListView.swift; sourceTree = "<group>"; };
 		45A3E2372A6568D7007CE9BE /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		45A3E2452A65805A007CE9BE /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 		45CCA0102A651F450071C5C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		45CCA0122A651F4B0071C5C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45CCA0152A651F4B0071C5C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		45EF81AD2A67D15F00946B88 /* TVListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +113,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45FC3BC32A666C99007A7CC0 /* Lottie in Frameworks */,
+				458222B32A67D651006B9058 /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +129,15 @@
 				457168FE2A66A9F200FDBBE8 /* SplashScreen.storyboard */,
 			);
 			path = Landing;
+			sourceTree = "<group>";
+		};
+		458222B42A67D6DF006B9058 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				458222B52A67D713006B9058 /* TVData.swift */,
+				458222B72A67DE0A006B9058 /* TVAPI.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		45A3E2292A6567C1007CE9BE /* Resources */ = {
@@ -193,8 +210,10 @@
 		45A3E23A2A657F74007CE9BE /* TV */ = {
 			isa = PBXGroup;
 			children = (
+				458222B42A67D6DF006B9058 /* Data */,
 				45A3E2572A658121007CE9BE /* TVViewModel.swift */,
 				4589FCD32A66B86A00D69572 /* TVListView.swift */,
+				45EF81AD2A67D15F00946B88 /* TVListItemView.swift */,
 			);
 			path = TV;
 			sourceTree = "<group>";
@@ -348,6 +367,7 @@
 			name = CITRARB;
 			packageProductDependencies = (
 				45FC3BC22A666C99007A7CC0 /* Lottie */,
+				458222B22A67D651006B9058 /* CachedAsyncImage */,
 			);
 			productName = CITRARB;
 			productReference = 45CCA00B2A651F450071C5C6 /* CITRARB.app */;
@@ -379,6 +399,7 @@
 			mainGroup = 45CCA0022A651F440071C5C6;
 			packageReferences = (
 				45FC3BC12A666C99007A7CC0 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				458222B12A67D651006B9058 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 			);
 			productRefGroup = 45CCA00C2A651F450071C5C6 /* Products */;
 			projectDirPath = "";
@@ -428,10 +449,13 @@
 				45CCA00F2A651F450071C5C6 /* CITRARBApp.swift in Sources */,
 				45A3E2502A6580AC007CE9BE /* MarketPlaceViewModel.swift in Sources */,
 				45A3E26D2A659235007CE9BE /* NewsItemView.swift in Sources */,
+				458222B82A67DE0A006B9058 /* TVAPI.swift in Sources */,
 				457168FA2A66916000FDBBE8 /* LandingView.swift in Sources */,
 				45A3E24A2A658074007CE9BE /* EventsViewModel.swift in Sources */,
 				45A3E2582A658121007CE9BE /* TVViewModel.swift in Sources */,
+				45EF81AE2A67D15F00946B88 /* TVListItemView.swift in Sources */,
 				45A3E2622A658191007CE9BE /* ProfileAPI.swift in Sources */,
+				458222B62A67D713006B9058 /* TVData.swift in Sources */,
 				45A3E2672A6587FB007CE9BE /* TLButton.swift in Sources */,
 				45A3E24E2A658092007CE9BE /* MusicViewModel.swift in Sources */,
 				45A3E2602A658175007CE9BE /* ProfileView.swift in Sources */,
@@ -655,6 +679,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		458222B12A67D651006B9058 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		45FC3BC12A666C99007A7CC0 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -666,6 +698,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		458222B22A67D651006B9058 /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 458222B12A67D651006B9058 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
 		45FC3BC22A666C99007A7CC0 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 45FC3BC12A666C99007A7CC0 /* XCRemoteSwiftPackageReference "lottie-ios" */;
