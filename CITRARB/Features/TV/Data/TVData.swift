@@ -13,7 +13,8 @@ struct TVListResponse: Codable, Hashable {
     let total: Int
 }
 
-struct TVListItem: Codable, Hashable, Equatable {
+struct TVListItem: Codable, Hashable, Equatable{//}, Identifiable {
+    //var id = UUID()
     
     let Link: String
     let description: String
@@ -41,5 +42,11 @@ struct Metric: Codable, Hashable {
     var url: String = ""
     var width: Int
 }
+
+struct IdentifiableTVListItem: Identifiable {
+    let id: String
+    let tvItem: TVListItem
+}
+
 
 

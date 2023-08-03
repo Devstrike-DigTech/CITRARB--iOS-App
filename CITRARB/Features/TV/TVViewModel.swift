@@ -11,6 +11,9 @@ import Combine
 class TVListViewModel: ObservableObject {
     @Published var tvListResponse: TVListResponse?
     @Published var isLoading: Bool = true
+    @Published var isShowingTVItem: Bool = false
+    @Published var selectedTVItem: IdentifiableTVListItem? // Added
+
     private var cancellables = Set<AnyCancellable>()
     
     private let apiClient = APIClient()
@@ -34,6 +37,7 @@ class TVListViewModel: ObservableObject {
                 print("Error fetching data: \(error)")
                 self.isLoading = false
                 // Handle error (e.g., show an alert)
+                
             }
         }
     }

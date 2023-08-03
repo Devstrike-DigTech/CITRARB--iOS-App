@@ -23,12 +23,21 @@ struct TVListView: View {
                             ForEach(tvList.data, id: \.Link){ tvItem in
                                 
                                 TVListItemView( videoThumbnail: tvItem.thumbnails.default!.url, videoTitle: tvItem.title)
+                                        .onTapGesture {
+                                        viewModel.isShowingTVItem = true
+                                            viewModel.selectedTVItem = IdentifiableTVListItem(id: tvItem.Link, tvItem: tvItem)
+                                    }
                             }
-                            
-                        }.refreshable {
+                           
+                        }
+                        .sheet(item: $viewModel.selectedTVItem){ identifiableTVListItem in
+                            TVSheetView(tvItem: identifiableTVListItem.tvItem)
+                        }
+                        .refreshable {
                             viewModel.fetchTVListData()
                         }
                     }
+                
                 }
                 else {
                     // Show a loading view or error message while data is being fetched
