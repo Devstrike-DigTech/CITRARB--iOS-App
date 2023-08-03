@@ -13,33 +13,11 @@ import SwiftUIYouTubePlayer
 
 struct TVSheetView: View {
     let tvItem: TVListItem
-//
-//    @State private var action = YouTubePlayerAction.idle
-//       @State private var state = YouTubePlayerState.empty
-//
-//       private var buttonText: String {
-//           switch state.status {
-//           case .playing:
-//               return "Pause"
-//           case .unstarted,  .ended, .paused:
-//               return "Play"
-//           case .buffering, .queued:
-//               return "Wait"
-//           }
-//       }
-//       private var infoText: String {
-//           "Q: \(state.quality)"
-//       }
-//
-
-
-
  
     var body: some View {
     
         VStack{
     
-//            YouTubePlayer(action: $action, state: $state)
             YouTubePlayerView(videoID: extractVideoID(from: tvItem.Link)!)
                 .frame(height: 300)
             Text("\(tvItem.title)")
@@ -49,12 +27,6 @@ struct TVSheetView: View {
             Spacer()
         }
         .padding(4)
-       // .onAppear{
-         //   print(extractVideoID(from: tvItem.Link)!)
-
-//            action = .loadID(linkID)
-        //}
-//
        }
     
         

@@ -10,31 +10,37 @@ import SwiftUI
 struct RegisterView: View {
     @StateObject var viewModel = ProfileViewModel()
     
+    @State private var username = ""
+    @State private var email = ""
+    @State private var password = ""
+    @State private var confirmPassword = ""
+    
+    
     var body: some View {
         VStack{
             HeaderView(title: "Register", subTitle: "Enter your details to register",  background: .orange)
             
             Form{
-                if !viewModel.errorMessage.isEmpty{
-                    Text(viewModel.errorMessage)
+                if !((viewModel.error?.isEmpty) == false){
+                    Text(viewModel.error!)
                         .foregroundColor(.red)
                 }
-                TextField("Username", text:  $viewModel.username)
+                TextField("Username", text:  $username)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
                 
-                TextField("Email Address", text:  $viewModel.email)
+                TextField("Email Address", text:  $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
                 
-                SecureField("Password", text: $viewModel.password)
+                SecureField("Password", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
                 
-                SecureField("Confirm Password", text: $viewModel.password)
+                SecureField("Confirm Password", text: $confirmPassword)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
@@ -43,7 +49,7 @@ struct RegisterView: View {
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
             
             TLButton(btnText: "Sign Up", backgoundColor: .blue, width: 256){
-                viewModel.login()
+                viewModel.register()
             }
             
             

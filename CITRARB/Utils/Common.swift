@@ -20,4 +20,7 @@ public var CONNECT_COLOR = Color.brown
 public var MUSIC_COLOR = Color.cyan
 public var UPLOADS_COLOR = Color.indigo
 
+public var isLoggedIn: Bool = false
+public var token: String = ""
+
 

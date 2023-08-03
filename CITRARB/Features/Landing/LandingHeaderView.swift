@@ -10,13 +10,23 @@ import SwiftUI
 struct LandingHeaderView: View {
     var body: some View {
         NavigationView{
-            HStack{
-                
+            HStack(alignment: .top){
+                Text(APP_NAME)
+                    .bold()
+                    .font(.title)
+                Image(systemName: "person.circle.fill")
+                    .frame(alignment: .trailing)
+                    .font(.largeTitle)
+                Image(systemName: "person.circle.fill")
+                    .font(.largeTitle)
+                    .frame(alignment: .trailing)
             }
+            .padding()
+            
             
         }
-        .navigationTitle(APP_NAME)
-       
+        
+        
         
     }
 }

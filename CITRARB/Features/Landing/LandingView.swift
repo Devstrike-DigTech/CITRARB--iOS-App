@@ -10,6 +10,9 @@ import SwiftUI
 struct LandingView: View {
     
     @State private var isPresentingNewScreen = false
+    @State private var isPresentingLoginScreen = false
+    @State private var showAlert = false
+
     
     
     var body: some View {
@@ -21,7 +24,39 @@ struct LandingView: View {
                     .opacity(0.5)
                 
                 VStack{
-                    
+                    HStack(alignment: .top){
+                        Text(APP_NAME)
+                            .bold()
+                            .font(.title)
+                            .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 8))
+                        Image(systemName: "person")
+                            .frame(alignment: .trailing)
+                            .font(.title)
+                            .onTapGesture{
+                                if UserDefaults.standard.string(forKey: "AuthToken") != nil {
+                                    // Use the retrieved token
+                                    //showAlert = true
+                                }else{
+                                    isPresentingLoginScreen = true
+                                }
+                                
+                            }
+                            
+                        Image(systemName: "gear")
+                            .font(.title)
+                            .frame(alignment: .trailing)
+                            
+                    }
+                    .sheet(isPresented: $isPresentingLoginScreen){
+                        LoginView()
+                    }
+                    .alert(isPresented: $showAlert) {
+                                 Alert(
+                                     title: Text("Alert Title"),
+                                     message: Text("User is logged in."),
+                                     dismissButton: .default(Text("OK"))
+                                 )
+                             }
                     HStack{
                             VStack{
                                 Text("MCM")
