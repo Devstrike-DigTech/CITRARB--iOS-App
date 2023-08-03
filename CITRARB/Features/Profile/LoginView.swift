@@ -32,13 +32,13 @@ struct LoginView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .autocorrectionDisabled()
                             .autocapitalization(.none)
-                            .padding()
+                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
                         
                         SecureField("Password", text: $password)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .autocorrectionDisabled()
                             .autocapitalization(.none)
-                            .padding()
+                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
                         
                     //}.padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
                   
@@ -51,6 +51,7 @@ struct LoginView: View {
                     TLButton(btnText: "Log In", backgoundColor: .blue, width: 256){
                         viewModel.login(email: email, password: password)
                     }
+                    .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
                     
                     
                     //Create Account

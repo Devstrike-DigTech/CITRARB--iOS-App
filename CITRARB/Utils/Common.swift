@@ -10,6 +10,7 @@ import SwiftUI
 
 public var BASE_URL = "https://citrab.onrender.com/api/"
 public var APP_NAME = "Coal City Connect"
+public var AUTH_TOKEN_KEY = "AuthToken"
 public var NEWS_COLOR = Color.blue
 public var TV_COLOR = Color.red
 public var EYE_WITNESS_COLOR = Color.green

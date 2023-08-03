@@ -20,37 +20,42 @@ struct RegisterView: View {
         VStack{
             HeaderView(title: "Register", subTitle: "Enter your details to register",  background: .orange)
             
-            Form{
-                if !((viewModel.error?.isEmpty) == false){
-                    Text(viewModel.error!)
+            
+            if ((viewModel.error?.isEmpty) == false){
+                Text(viewModel.error ?? "")
                         .foregroundColor(.red)
                 }
                 TextField("Username", text:  $username)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
                 
                 TextField("Email Address", text:  $email)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
                 
                 SecureField("Password", text: $password)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
                 
                 SecureField("Confirm Password", text: $confirmPassword)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .autocorrectionDisabled()
                     .autocapitalization(.none)
+                    .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
                 
-            }
-            .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
+            
+            //.padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
             
             TLButton(btnText: "Sign Up", backgoundColor: .blue, width: 256){
-                viewModel.register()
+                viewModel.register(username: username, email: email, password: password, confirmPassword: confirmPassword)
             }
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
             
             
             //Create Account
