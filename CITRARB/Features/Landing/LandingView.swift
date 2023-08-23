@@ -138,18 +138,21 @@ struct LandingView: View {
                     .padding()
                     
                     HStack{
-                        ZStack{
-                            MenuItemView(animation: "citrarb_members_menu")
-                            Text("Members")
-                                .bold()
-                                .foregroundColor(.white)
-                                .offset(y: 50)
-                                .font(.system(size: 18))
-                                .padding(8)
+                        NavigationLink(destination: MembersView()){
+                            
+                            ZStack{
+                                MenuItemView(animation: "citrarb_members_menu")
+                                Text("Members")
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .offset(y: 50)
+                                    .font(.system(size: 18))
+                                    .padding(8)
+                            }
+                            .background(MEMBERS_COLOR)
+                            .cornerRadius(30)
+                            .shadow(color: MEMBERS_COLOR,radius: 5)
                         }
-                        .background(MEMBERS_COLOR)
-                        .cornerRadius(30)
-                        .shadow(color: MEMBERS_COLOR,radius: 5)
                         ZStack{
                             MenuItemView(animation: "citrarb_market_place_menu")
                             Text("Marketplace")

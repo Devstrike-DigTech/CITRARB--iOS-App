@@ -22,6 +22,8 @@ public var MUSIC_COLOR = Color.cyan
 public var UPLOADS_COLOR = Color.indigo
 
 public var isLoggedIn: Bool = false
-public var token: String = ""
+public var token: String = UserDefaults.standard.string(forKey: AUTH_TOKEN_KEY) ?? ""
+
+
 
 
