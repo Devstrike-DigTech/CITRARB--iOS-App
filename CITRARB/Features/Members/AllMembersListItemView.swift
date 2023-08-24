@@ -41,7 +41,7 @@ struct AllMembersListItemView: View {
                 Text(userGender)
                     .font(.subheadline)
                     .frame(alignment: .leading)
-            }
+            }.padding()
         }
         
     }

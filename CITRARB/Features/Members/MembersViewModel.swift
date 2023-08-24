@@ -10,6 +10,7 @@ import Foundation
 class MembersViewModel: ObservableObject{
     
     @Published var membersListResponse: MembersListResponse?
+    @Published var friendsListResponse: GetFriendsResponse?
     @Published var isLoading: Bool = true
     @Published var selectedMemberItem: IdentifiableMemberListItem? // Added
     @Published var isShowingMemberItem: Bool = false
@@ -70,5 +71,33 @@ class MembersViewModel: ObservableObject{
             }
         }
         
+    }
+    
+    func fetchFriendsListData() {
+        apiClient.fetchFriendsList { result in
+            switch result {
+            case .success(let friendsListResponse):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    let updatedData = friendsListResponse//.data.map { item -> FriendsList in
+//                        var updatedItem = item
+//
+//                        return updatedItem
+//                    }
+                    self.friendsListResponse = updatedData//GetFriendsResponse(status: friendsListResponse.status, length: friendsListResponse.length, //data: updatedData)
+//                        .members.map { item in
+//                        var updatedItem = item
+//
+//                        return updatedItem
+//                    }
+//                    self.membersListResponse = MembersListResponse(members: updatedData, status: membersListResponse.status)
+                }
+            case .failure(let error):
+                print("Error fetching data: \(error)")
+                self.isLoading = false
+                // Handle error (e.g., show an alert)
+                
+            }
+        }
     }
 }

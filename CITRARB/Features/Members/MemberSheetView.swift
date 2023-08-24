@@ -48,6 +48,7 @@ struct MemberSheetView: View {
                 print("will send friend request from viewmodel function")
                 viewModel.sendFriendRequest(userId: memberItem._id)
             }
+            .tint(MEMBERS_COLOR)
             .padding()
         }
         Spacer()

@@ -38,6 +38,8 @@ class MembersAPIClient {
                         //decoder.keyDecodingStrategy = .convertFromSnakeCase // Handle snake_case to camelCase conversion if needed
                         let membersListResponse = try decoder.decode(MembersListResponse.self, from: data)
                         completion(.success(membersListResponse))
+                        print("response: \(membersListResponse)")
+
                     } catch {
                         completion(.failure(error))
                         print(error)
@@ -96,6 +98,53 @@ class MembersAPIClient {
             
         }
         task.resume()
+    }
+    
+    
+    func fetchFriendsList(completion: @escaping (Result<GetFriendsResponse, Error>) -> Void) {
+        let urlString = "\(BASE_URL)friends"
+        
+        print("making api call...")
+        
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization") // Add the bearer token
+        print(token)
+        
+        //if let url = URL(string: urlString)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    completion(.failure(error))
+                    print(error)
+                    return
+                }
+                
+                
+                if let data = data {
+                    print("here")
+                    do {
+                        let decoder = JSONDecoder()
+                        //decoder.keyDecodingStrategy = .convertFromSnakeCase // Handle snake_case to camelCase conversion if needed
+                        let friendsListResponse = try decoder.decode(GetFriendsResponse.self, from: data)
+                        completion(.success(friendsListResponse))
+                        print("response: \(friendsListResponse)")
+
+                    } catch {
+                        completion(.failure(error))
+                        print(error)
+                    }
+                } else {
+                    
+                    completion(.failure(NSError(domain: "Data is nil", code: -1, userInfo: nil)))
+                }
+            }.resume()
+        
     }
         
 }

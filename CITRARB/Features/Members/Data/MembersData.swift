@@ -54,3 +54,28 @@ struct FriendRequest: Codable{
     let _id: String
     let __v: Int
 }
+
+struct GetFriendsResponse: Codable, Hashable{
+    let status: String
+    let length: Int
+    let data: [FriendsList]
+}
+
+struct FriendsList: Codable, Hashable, Equatable{
+    let _id: String
+    let userId: String
+    let friend: Friend
+    let active: Bool
+    let __v: Int
+    
+    // Implement Equatable protocol
+      static func == (lhs: FriendsList, rhs: FriendsList) -> Bool {
+          return lhs._id == rhs._id
+      }
+}
+
+struct Friend: Codable, Hashable{
+    let _id: String
+    let username: String
+    let photo: String
+}
