@@ -11,6 +11,7 @@ class MembersViewModel: ObservableObject{
     
     @Published var membersListResponse: MembersListResponse?
     @Published var friendsListResponse: GetFriendsResponse?
+    @Published var pendingFriendRequestsListResponse: PendingFriendRequestsResponse?
     @Published var isLoading: Bool = true
     @Published var selectedMemberItem: IdentifiableMemberListItem? // Added
     @Published var isShowingMemberItem: Bool = false
@@ -78,13 +79,43 @@ class MembersViewModel: ObservableObject{
             switch result {
             case .success(let friendsListResponse):
                 DispatchQueue.main.async {
-                    self.isLoading = false
+                    
                     let updatedData = friendsListResponse//.data.map { item -> FriendsList in
 //                        var updatedItem = item
 //
 //                        return updatedItem
 //                    }
                     self.friendsListResponse = updatedData//GetFriendsResponse(status: friendsListResponse.status, length: friendsListResponse.length, //data: updatedData)
+//                        .members.map { item in
+//                        var updatedItem = item
+//
+//                        return updatedItem
+//                    }
+//                    self.membersListResponse = MembersListResponse(members: updatedData, status: membersListResponse.status)
+                    self.fetchPendingFriendRequestsList()
+                }
+            case .failure(let error):
+                print("Error fetching data: \(error)")
+                self.isLoading = false
+                // Handle error (e.g., show an alert)
+                
+            }
+        }
+    }
+    
+    
+    func fetchPendingFriendRequestsList() {
+        apiClient.fetchPendingFriendRequestsList { result in
+            switch result {
+            case .success(let pendingFriendRequestsListResponse):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    let updatedData = pendingFriendRequestsListResponse//.data.map { item -> FriendsList in
+//                        var updatedItem = item
+//
+//                        return updatedItem
+//                    }
+                    self.pendingFriendRequestsListResponse = updatedData//GetFriendsResponse(status: friendsListResponse.status, length: friendsListResponse.length, //data: updatedData)
 //                        .members.map { item in
 //                        var updatedItem = item
 //
@@ -100,4 +131,6 @@ class MembersViewModel: ObservableObject{
             }
         }
     }
+    
+    
 }

@@ -10,59 +10,94 @@ import SwiftUI
 struct FriendsView: View {
     
     @StateObject private var viewModel = MembersViewModel()
-
+    
     var body: some View {
         NavigationView{
-            ZStack{
-                //            Image("bgDay")
-                //              .aspectRatio(contentMode: .fill)
-                //              .opacity(0.5)
+            VStack{
                 if viewModel.isLoading == false{
-                    if let friendsList = viewModel.friendsListResponse{
-                        List{
-                            // Display the fetched data
-                            ForEach(friendsList.data, id: \._id){ friendItem in
+                        ScrollView(.horizontal, showsIndicators: false) {
                                 
-                                FriendsListItemView( userImageUrl: friendItem.friend.photo, userName: friendItem.friend.username)
-                                    .swipeActions{
-                                        Button{ 
-                                            let phoneNumber = "08132665650"
-                                            if let url = URL(string: "tel://\(phoneNumber)") {
-                                                       if UIApplication.shared.canOpenURL(url) {
-                                                           UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                                                       } else {
-                                                           // Handle error: Device doesn't support phone calls or URL is invalid
-                                                       }
-                                                   }
-                                        }label: {
-                                            Label("Call", systemImage: "phone")
-                                        }
-                                        .tint(.green)
-                                    }
-                                    .swipeActions{
-                                        Button{
-                                            
-                                        }label: {
-                                            Label("Message", systemImage: "message")
-                                        }
-                                        .tint(.blue)
-                                    }
-//                                        .onTapGesture {
-//                                        viewModel.isShowingMemberItem = true
-//                                            viewModel.selectedMemberItem = IdentifiableMemberListItem(id: memberItem._id, memberItem: memberItem)
-//                                    }
+                        if let pendingFriendRequests = viewModel.pendingFriendRequestsListResponse{
+                            HStack(spacing: 20) {
+                                // Display the fetched data
+                                ForEach(pendingFriendRequests.data, id: \._id){ friendRequestItem in
+                                    
+                                    FriendRequestItemView(friendRequester: friendRequestItem.requester)
+                                        .cornerRadius(30)
+                                        .shadow(color: .gray,radius: 8)
+                                        .frame(height: 100)
+                                       
+                                    //                                        .onTapGesture {
+                                    //                                        viewModel.isShowingMemberItem = true
+                                    //                                            viewModel.selectedMemberItem = IdentifiableMemberListItem(id: memberItem._id, memberItem: memberItem)
+                                    //                                    }
+                                }
+                                
                             }
-                           
-                        }
-//                        .sheet(item: $viewModel.selectedMemberItem){ identifiableMemberListItem in
-//                            MemberSheetView(memberItem: identifiableMemberListItem.memberItem)
-//                        }
-                        .refreshable {
-                            viewModel.fetchFriendsListData()
+                            //                        .sheet(item: $viewModel.selectedMemberItem){ identifiableMemberListItem in
+                            //                            MemberSheetView(memberItem: identifiableMemberListItem.memberItem)
+                            //                        }
+                            .refreshable {
+                                viewModel.fetchFriendsListData()
+                            }
                         }
                     }
-                
-                }
+                    //.padding()
+                    //.frame(height: 240)
+                    
+                    VStack{
+                        //            Image("bgDay")
+                        //              .aspectRatio(contentMode: .fill)
+                        //              .opacity(0.5)
+                        
+                        if let friendsList = viewModel.friendsListResponse{
+                            List{
+                                // Display the fetched data
+                                ForEach(friendsList.data, id: \._id){ friendItem in
+                                    
+                                    FriendsListItemView( userImageUrl: friendItem.friend.photo, userName: friendItem.friend.username)
+                                        .swipeActions{
+                                            Button{
+                                                let phoneNumber = "08132665650"
+                                                if let url = URL(string: "tel://\(phoneNumber)") {
+                                                    if UIApplication.shared.canOpenURL(url) {
+                                                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                                                    } else {
+                                                        // Handle error: Device doesn't support phone calls or URL is invalid
+                                                    }
+                                                }
+                                            }label: {
+                                                Label("Call", systemImage: "phone")
+                                            }
+                                            .tint(.green)
+                                        }
+                                        .swipeActions{
+                                            Button{
+                                                
+                                            }label: {
+                                                Label("Message", systemImage: "message")
+                                            }
+                                            .tint(.blue)
+                                        }
+                                    //                                        .onTapGesture {
+                                    //                                        viewModel.isShowingMemberItem = true
+                                    //                                            viewModel.selectedMemberItem = IdentifiableMemberListItem(id: memberItem._id, memberItem: memberItem)
+                                    //                                    }
+                                }
+                                
+                            }
+                            //                        .sheet(item: $viewModel.selectedMemberItem){ identifiableMemberListItem in
+                            //                            MemberSheetView(memberItem: identifiableMemberListItem.memberItem)
+                            //                        }
+                            .refreshable {
+                                viewModel.fetchFriendsListData()
+                            }
+                        }
+                        
+                        
+                    }//ZStack
+                    
+                }//if not loading
                 else {
                     // Show a loading view or error message while data is being fetched
                     VStack{
@@ -72,6 +107,7 @@ struct FriendsView: View {
                     
                 }
             }
+            
         }
         .onAppear{
             viewModel.fetchFriendsListData()

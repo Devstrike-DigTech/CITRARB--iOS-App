@@ -79,3 +79,21 @@ struct Friend: Codable, Hashable{
     let username: String
     let photo: String
 }
+
+struct PendingFriendRequestsResponse: Codable{
+    let status: String
+    let data: [PendingFriendRequest]
+}
+
+struct PendingFriendRequest: Codable{
+    let _id: String
+    let userId: String
+    let requester: FriendRequester
+    let status: String
+}
+
+struct FriendRequester: Codable{
+    let _id: String
+    let username: String
+    let photo: String
+}
