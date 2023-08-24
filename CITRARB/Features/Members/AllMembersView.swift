@@ -54,7 +54,7 @@ struct AllMembersView: View {
         .onAppear{
             viewModel.fetchMembersListData()
         }
-        .navigationBarTitle("TV Videos")
+        .navigationBarTitle("Members")
     }
 }
 

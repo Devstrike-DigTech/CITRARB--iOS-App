@@ -12,6 +12,8 @@ import CachedAsyncImage
 struct MemberSheetView: View {
     
     let memberItem: Member
+    @StateObject private var viewModel = MembersViewModel()
+
 
     var body: some View {
         VStack{
@@ -44,6 +46,7 @@ struct MemberSheetView: View {
             
             Button("Send Friend Request"){
                 print("will send friend request from viewmodel function")
+                viewModel.sendFriendRequest(userId: memberItem._id)
             }
             .padding()
         }

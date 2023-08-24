@@ -41,3 +41,16 @@ struct IdentifiableMemberListItem: Identifiable {
     let id: String
     let memberItem: Member
 }
+
+struct SendFriendRequestResponse: Codable{
+    let status: String
+    let data: FriendRequest
+}
+
+struct FriendRequest: Codable{
+    let userId: String
+    let requester: String
+    let status: String
+    let _id: String
+    let __v: Int
+}

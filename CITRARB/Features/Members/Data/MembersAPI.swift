@@ -49,4 +49,53 @@ class MembersAPIClient {
             }.resume()
         
     }
+    
+    
+    enum MemberError: Error {
+            case networkError(Error)
+            case noData
+            case decodingError(Error)
+        }
+    
+    static func sendFriendRequest(userId: String, completion: @escaping (Result<SendFriendRequestResponse, MemberError>) -> Void)  {//}-> AnyPublisher<LoginResponse, Error> {
+        let url = URL(string: "\(BASE_URL)friendrequests")! // Replace with your API URL
+
+        print("making api call...")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization") // Add the bearer token
+        let body: [String: AnyHashable] = [
+            "userId": userId
+        ]
+
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        let task = URLSession.shared.dataTask(with: request){ data, _, error in
+            if let error = error {
+                completion(.failure(error as! MembersAPIClient.MemberError))
+                           return
+                       }
+                       
+                       guard let data = data else {
+                           completion(.failure(.noData))
+                           return
+                       }
+                       
+                       do {
+                           let response = try decoder.decode(SendFriendRequestResponse.self, from: data)
+                           completion(.success(response))
+                           print("response: \(response)")
+                       } catch {
+                           completion(.failure(error as! MembersAPIClient.MemberError))
+                       }
+            
+        }
+        task.resume()
+    }
+        
 }
