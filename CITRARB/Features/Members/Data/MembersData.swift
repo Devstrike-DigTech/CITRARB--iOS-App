@@ -97,3 +97,26 @@ struct FriendRequester: Codable{
     let username: String
     let photo: String
 }
+
+struct AcceptFriendRequestResponse: Codable, Hashable{
+    let status: String
+    let data: FriendRequestAccepted
+}
+
+struct FriendRequestAccepted: Codable, Hashable, Equatable{
+    let _id: String
+    let userId: String
+    let requester: String
+    let status: String
+    let __v: Int
+
+    // Implement Equatable protocol
+      static func == (lhs: FriendRequestAccepted, rhs: FriendRequestAccepted) -> Bool {
+          return lhs._id == rhs._id
+      }
+}
+
+struct AcceptFriendRequest: Codable{
+    let status: String
+}
+

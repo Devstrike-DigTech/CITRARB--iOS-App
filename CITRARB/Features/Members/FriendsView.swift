@@ -22,7 +22,7 @@ struct FriendsView: View {
                                 // Display the fetched data
                                 ForEach(pendingFriendRequests.data, id: \._id){ friendRequestItem in
                                     
-                                    FriendRequestItemView(friendRequester: friendRequestItem.requester)
+                                    FriendRequestItemView(friendRequester: friendRequestItem.requester, pendingFriendRequest: friendRequestItem)
                                         .cornerRadius(30)
                                         .shadow(color: .gray,radius: 8)
                                         .frame(height: 100)

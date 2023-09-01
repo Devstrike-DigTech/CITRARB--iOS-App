@@ -132,5 +132,33 @@ class MembersViewModel: ObservableObject{
         }
     }
     
+    func respondToFriendRequestsList(requestId: String, status: String){
+        isLoading = true
+        MembersAPIClient.respondToFriendRequestsList(requestId: requestId, status: status){ result in
+            DispatchQueue.main.async {
+                switch result{
+                case .success(let response):
+                    print("SUCCESS: \(response)")
+                    self.fetchFriendsListData()
+                case .failure(let error):
+                    switch error {
+                    case .networkError(let networkError):
+                        print("NETWORK ERROR: \(networkError)")
+                        self.error = "Check your internet connection"
+                        // Handle network error
+                    case .noData:
+                        print("NO DATA ERROR")
+                        // Handle no data error
+                    case .decodingError(let decodingError):
+                        print("DECODING ERROR: \(decodingError)")
+                        // Handle decoding error
+                        
+                    }
+                }
+                
+            }
+        }
+        
+    }
     
 }
