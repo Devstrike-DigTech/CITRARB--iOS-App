@@ -10,7 +10,9 @@ import SwiftUI
 struct AllMembersView: View {
     
     @StateObject private var viewModel = MembersViewModel()
-
+    @State private var searchText = ""
+    
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -18,28 +20,36 @@ struct AllMembersView: View {
                 //              .aspectRatio(contentMode: .fill)
                 //              .opacity(0.5)
                 if viewModel.isLoading == false{
-                    if let membersList = viewModel.membersListResponse{
-                        List{
-                            // Display the fetched data
-                            ForEach(membersList.members, id: \._id){ memberItem in
-                                
-                                AllMembersListItemView( userImageUrl: memberItem.photo, userName: memberItem.username,
-                                                        userGender: memberItem.role)
-                                        .onTapGesture {
-                                        viewModel.isShowingMemberItem = true
-                                            viewModel.selectedMemberItem = IdentifiableMemberListItem(id: memberItem._id, memberItem: memberItem)
-                                    }
+                    VStack{
+                        SearchBarView(text: $searchText)
+                        if let membersList = viewModel.membersListResponse{
+                            let filteredMembers = membersList.members.filter { memberItem in
+                                return searchText.isEmpty || memberItem.username.localizedCaseInsensitiveContains(searchText)
                             }
-                           
-                        }
-                        .sheet(item: $viewModel.selectedMemberItem){ identifiableMemberListItem in
-                            MemberSheetView(memberItem: identifiableMemberListItem.memberItem)
-                        }
-                        .refreshable {
-                            viewModel.fetchMembersListData()
+                            
+                            List{
+                                // Display the fetched data
+                                ForEach(filteredMembers, id: \._id){ memberItem in
+                                    
+                                    AllMembersListItemView( userImageUrl: memberItem.photo, userName: memberItem.username,
+                                                            userGender: memberItem.role)
+                                    .onTapGesture {
+                                        viewModel.isShowingMemberItem = true
+                                        viewModel.selectedMemberItem = IdentifiableMemberListItem(id: memberItem._id, memberItem: memberItem)
+                                    }
+                                }
+                                
+                            }
+                            .sheet(item: $viewModel.selectedMemberItem){ identifiableMemberListItem in
+                                MemberSheetView(memberItem: identifiableMemberListItem.memberItem)
+                            }
+                            .refreshable {
+                                viewModel.fetchMembersListData()
+                            }
                         }
                     }
-                
+                    
+                    
                 }
                 else {
                     // Show a loading view or error message while data is being fetched

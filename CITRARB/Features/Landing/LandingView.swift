@@ -182,18 +182,21 @@ struct LandingView: View {
                     .padding()
                     
                     HStack{
-                        ZStack{
-                            MenuItemView(animation: "citrarb_connect_menu")
-                            Text("Connect")
-                                .bold()
-                                .foregroundColor(.white)
-                                .offset(y: 50)
-                                .font(.system(size: 18))
-                                .padding(8)
+                        NavigationLink(destination: ConnectsView()){
+                            
+                            ZStack{
+                                MenuItemView(animation: "citrarb_connect_menu")
+                                Text("Connect")
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .offset(y: 50)
+                                    .font(.system(size: 18))
+                                    .padding(8)
+                            }
+                            .background(CONNECT_COLOR)
+                            .cornerRadius(30)
+                            .shadow(color: CONNECT_COLOR,radius: 5)
                         }
-                        .background(CONNECT_COLOR)
-                        .cornerRadius(30)
-                        .shadow(color: CONNECT_COLOR,radius: 5)
                         ZStack{
                             MenuItemView(animation: "citrarb_music_menu")
                             Text("Music")

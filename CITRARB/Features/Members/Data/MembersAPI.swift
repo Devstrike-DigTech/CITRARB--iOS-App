@@ -33,6 +33,12 @@ class MembersAPIClient {
             
             if let data = data {
                 print(data)
+                // Convert the data to a string and print it
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("Members List Response data: \(responseString)")
+                } else {
+                    print("Response data cannot be converted to a string.")
+                }
                 do {
                     let decoder = JSONDecoder()
                     //decoder.keyDecodingStrategy = .convertFromSnakeCase // Handle snake_case to camelCase conversion if needed
@@ -128,6 +134,12 @@ class MembersAPIClient {
             
             if let data = data {
                 print("here")
+                // Convert the data to a string and print it
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("Friend List Response data: \(responseString)")
+                } else {
+                    print("Response data cannot be converted to a string.")
+                }
                 do {
                     let decoder = JSONDecoder()
                     //decoder.keyDecodingStrategy = .convertFromSnakeCase // Handle snake_case to camelCase conversion if needed

@@ -27,10 +27,16 @@ struct MemberSheetView: View {
                         .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 30))
                         .transition(.opacity)
-                        .frame(width: 240, height: 240)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 240)
                 }else{
                     HStack{
-                        ProgressView()
+                        Image(systemName: "photo.fill")
+                            .frame(maxWidth: .infinity)
+                            .font(.system(size: 240))
+                            //.resizable()
+                            .scaledToFit()
+                        //ProgressView()
                     }
                     
                 }

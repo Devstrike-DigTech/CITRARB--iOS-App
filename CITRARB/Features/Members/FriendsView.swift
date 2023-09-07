@@ -10,94 +10,44 @@ import SwiftUI
 struct FriendsView: View {
     
     @StateObject private var viewModel = MembersViewModel()
+    @State private var searchText = ""
+
     
     var body: some View {
         NavigationView{
             VStack{
                 if viewModel.isLoading == false{
-                        ScrollView(.horizontal, showsIndicators: false) {
-                                
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        
                         if let pendingFriendRequests = viewModel.pendingFriendRequestsListResponse{
                             HStack(spacing: 20) {
                                 // Display the fetched data
-                                ForEach(pendingFriendRequests.data, id: \._id){ friendRequestItem in
-                                    
-                                    FriendRequestItemView(friendRequester: friendRequestItem.requester, pendingFriendRequest: friendRequestItem)
-                                        .cornerRadius(30)
-                                        .shadow(color: .gray,radius: 8)
-                                        .frame(height: 100)
-                                       
-                                    //                                        .onTapGesture {
-                                    //                                        viewModel.isShowingMemberItem = true
-                                    //                                            viewModel.selectedMemberItem = IdentifiableMemberListItem(id: memberItem._id, memberItem: memberItem)
-                                    //                                    }
-                                }
-                                
-                            }
-                            //                        .sheet(item: $viewModel.selectedMemberItem){ identifiableMemberListItem in
-                            //                            MemberSheetView(memberItem: identifiableMemberListItem.memberItem)
-                            //                        }
-                            .refreshable {
-                                viewModel.fetchFriendsListData()
+                                displayPendingFriendRequests(pendingFriendRequests: pendingFriendRequests)
                             }
                         }
                     }
-                    //.padding()
-                    //.frame(height: 240)
-                    
                     VStack{
-                        //            Image("bgDay")
-                        //              .aspectRatio(contentMode: .fill)
-                        //              .opacity(0.5)
+                        SearchBarView(text: $searchText)
                         
                         if let friendsList = viewModel.friendsListResponse{
+                            let filteredMembers = friendsList.data.filter { friendItem in
+                                return searchText.isEmpty || friendItem.friend .username.localizedCaseInsensitiveContains(searchText)
+                            }
                             List{
                                 // Display the fetched data
-                                ForEach(friendsList.data, id: \._id){ friendItem in
+                                ForEach(filteredMembers, id: \._id){ friendItem in
                                     
-                                    FriendsListItemView( userImageUrl: friendItem.friend.photo, userName: friendItem.friend.username)
-                                        .swipeActions{
-                                            Button{
-                                                let phoneNumber = "08132665650"
-                                                if let url = URL(string: "tel://\(phoneNumber)") {
-                                                    if UIApplication.shared.canOpenURL(url) {
-                                                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                                                    } else {
-                                                        // Handle error: Device doesn't support phone calls or URL is invalid
-                                                    }
-                                                }
-                                            }label: {
-                                                Label("Call", systemImage: "phone")
-                                            }
-                                            .tint(.green)
-                                        }
-                                        .swipeActions{
-                                            Button{
-                                                
-                                            }label: {
-                                                Label("Message", systemImage: "message")
-                                            }
-                                            .tint(.blue)
-                                        }
-                                    //                                        .onTapGesture {
-                                    //                                        viewModel.isShowingMemberItem = true
-                                    //                                            viewModel.selectedMemberItem = IdentifiableMemberListItem(id: memberItem._id, memberItem: memberItem)
-                                    //                                    }
+                                    displayFriends(friendList: friendItem)
                                 }
                                 
                             }
-                            //                        .sheet(item: $viewModel.selectedMemberItem){ identifiableMemberListItem in
-                            //                            MemberSheetView(memberItem: identifiableMemberListItem.memberItem)
-                            //                        }
                             .refreshable {
                                 viewModel.fetchFriendsListData()
                             }
                         }
-                        
-                        
-                    }//ZStack
+                    } //VStack
                     
-                }//if not loading
+                } //if not loading
                 else {
                     // Show a loading view or error message while data is being fetched
                     VStack{
@@ -106,14 +56,71 @@ struct FriendsView: View {
                     }
                     
                 }
-            }
-            
-        }
-        .onAppear{
-            viewModel.fetchFriendsListData()
-        }
-        .navigationBarTitle("Members")
     }
+}
+    .onAppear{
+        viewModel.fetchFriendsListData()
+    }
+    .navigationBarTitle("Members")
+}
+
+func makeCall(){
+    let phoneNumber = "08132665650"
+    if let url = URL(string: "tel://\(phoneNumber)") {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            // Handle error: Device doesn't support phone calls or URL is invalid
+        }
+    }
+}
+
+func displayFriends(friendList: FriendsList) -> some View{
+        
+    FriendsListItemView( userImageUrl: friendList.friend.photo, userName: friendList.friend.username)
+            .swipeActions{
+                Button{
+                    makeCall()
+                }label: {
+                    Label("Call", systemImage: "phone")
+                }
+                .tint(.green)
+            }
+            .swipeActions{
+                Button{
+                    
+                }label: {
+                    Label("Message", systemImage: "message")
+                }
+                .tint(.blue)
+            }
+            .swipeActions(edge: .leading){
+                Button{
+                    //ask for confirmation
+                    //delete friend
+                }label: {
+                    Label("Unfriend", systemImage: "person.fill.badge.minus")
+                }
+                .tint(.red)
+
+            }
+
+    
+}
+
+func displayPendingFriendRequests(pendingFriendRequests: PendingFriendRequestsResponse) -> some View{
+    ForEach(pendingFriendRequests.data, id: \._id){ friendRequestItem in
+        
+        FriendRequestItemView(friendRequester: friendRequestItem.requester, pendingFriendRequest: friendRequestItem)
+            .cornerRadius(30)
+            .shadow(color: .gray,radius: 8)
+            .frame(height: 100)
+            .refreshable {
+                viewModel.fetchFriendsListData()
+            }
+    }
+    
+}
 }
 
 struct FriendsView_Previews: PreviewProvider {
