@@ -109,7 +109,7 @@ class ConnectsViewModel: ObservableObject{
     public func canSave() -> Bool{
         
         let descriptionCharCount = description.filter {$0 != " "}.count
-        let phoneNumberCharCount = description.filter {$0 != " "}.count
+        let phoneNumberCharCount = phone.filter {$0 != " "}.count
         
         print("\(descriptionCharCount)")
         

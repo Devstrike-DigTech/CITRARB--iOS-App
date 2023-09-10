@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 public var BASE_URL = "https://citrab.onrender.com/api/"
+public var BASE_NORMAL_URL = "https://citrab.onrender.com/"
 public var APP_NAME = "Coal City Connect"
 public var AUTH_TOKEN_KEY = "AuthToken"
 public var NEWS_COLOR = Color.blue

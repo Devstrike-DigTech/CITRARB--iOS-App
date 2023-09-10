@@ -153,18 +153,21 @@ struct LandingView: View {
                             .cornerRadius(30)
                             .shadow(color: MEMBERS_COLOR,radius: 5)
                         }
-                        ZStack{
-                            MenuItemView(animation: "citrarb_market_place_menu")
-                            Text("Marketplace")
-                                .bold()
-                                .foregroundColor(.white)
-                                .offset(y: 50)
-                                .font(.system(size: 17))
-                                .padding(8)
+                        NavigationLink(destination: MarketPlaceBaseView()){
+                            
+                            ZStack{
+                                MenuItemView(animation: "citrarb_market_place_menu")
+                                Text("Marketplace")
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .offset(y: 50)
+                                    .font(.system(size: 17))
+                                    .padding(8)
+                            }
+                            .background(MARKET_PLACE_COLOR)
+                            .cornerRadius(30)
+                            .shadow(color: MARKET_PLACE_COLOR,radius: 5)
                         }
-                        .background(MARKET_PLACE_COLOR)
-                        .cornerRadius(30)
-                        .shadow(color: MARKET_PLACE_COLOR,radius: 5)
                         ZStack{
                             MenuItemView(animation: "citrarb_events_menu")
                             Text("Events")
