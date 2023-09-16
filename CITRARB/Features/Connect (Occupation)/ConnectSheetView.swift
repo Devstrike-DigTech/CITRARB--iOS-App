@@ -70,8 +70,11 @@ struct ConnectSheetView: View {
     
     
     func makeCall(phoneNumber: String){
-        showAlert = true
-        alertMessage = "Call Clicked!"
+        if let phoneURL = URL(string: "tel://\(phoneNumber)") {
+            UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+        }
+        //showAlert = true
+        //alertMessage = "Call Clicked!"
     }
     func shareConnect(phoneNumber: String){
         showAlert = true

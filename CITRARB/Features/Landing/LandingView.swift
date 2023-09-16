@@ -119,21 +119,20 @@ struct LandingView: View {
                             
                         }
                         
-                        
-                        
-                        ZStack{
-                            MenuItemView(animation: "citrarb_eye_witness_menu")
-                            Text("Eye Witness")
-                                .bold()
-                                .foregroundColor(.white)
-                                .offset(y: 50)
-                                .font(.system(size: 18))
-                                .padding(8)
+                        NavigationLink(destination: EyeWitnessReportLandingView()){
+                            ZStack{
+                                MenuItemView(animation: "citrarb_eye_witness_menu")
+                                Text("Eye Witness")
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .offset(y: 50)
+                                    .font(.system(size: 18))
+                                    .padding(8)
+                            }
+                            .background(EYE_WITNESS_COLOR)
+                            .cornerRadius(30)
+                            .shadow(color: EYE_WITNESS_COLOR,radius: 5)
                         }
-                        .background(EYE_WITNESS_COLOR)
-                        .cornerRadius(30)
-                        .shadow(color: EYE_WITNESS_COLOR,radius: 5)
-                        
                     }
                     .padding()
                     
@@ -168,19 +167,23 @@ struct LandingView: View {
                             .cornerRadius(30)
                             .shadow(color: MARKET_PLACE_COLOR,radius: 5)
                         }
-                        ZStack{
-                            MenuItemView(animation: "citrarb_events_menu")
-                            Text("Events")
-                                .bold()
-                                .foregroundColor(.white)
-                                .offset(y: 50)
-                                .font(.system(size: 18))
-                                .padding(8)
+                        NavigationLink(destination: EventsLandingView()){
+                            ZStack{
+                                MenuItemView(animation: "citrarb_events_menu")
+                                Text("Events")
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .offset(y: 50)
+                                    .font(.system(size: 18))
+                                    .padding(8)
+                            }
+                            .background(EVENTS_COLOR)
+                            .cornerRadius(30)
+                            .shadow(color: EVENTS_COLOR,radius: 5)
+                            
                         }
-                        .background(EVENTS_COLOR)
-                        .cornerRadius(30)
-                        .shadow(color: EVENTS_COLOR,radius: 5)
-                        
+                            
+                     
                     }
                     .padding()
                     
@@ -200,18 +203,20 @@ struct LandingView: View {
                             .cornerRadius(30)
                             .shadow(color: CONNECT_COLOR,radius: 5)
                         }
-                        ZStack{
-                            MenuItemView(animation: "citrarb_music_menu")
-                            Text("Music")
-                                .bold()
-                                .foregroundColor(.white)
-                                .offset(y: 50)
-                                .font(.system(size: 18))
-                                .padding(8)
+                        NavigationLink(destination: MusicLandingView()){
+                            ZStack{
+                                MenuItemView(animation: "citrarb_music_menu")
+                                Text("Music")
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .offset(y: 50)
+                                    .font(.system(size: 18))
+                                    .padding(8)
+                            }
+                            .background(MUSIC_COLOR)
+                            .cornerRadius(30)
+                            .shadow(color: MUSIC_COLOR,radius: 5)
                         }
-                        .background(MUSIC_COLOR)
-                        .cornerRadius(30)
-                        .shadow(color: MUSIC_COLOR,radius: 5)
                         ZStack{
                             MenuItemView(animation: "citrarb_uploads_menu")
                             Text("Uploads")

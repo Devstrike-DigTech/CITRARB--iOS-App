@@ -1,22 +1,21 @@
 //
-//  ProductItemView.swift
+//  MusicItemView.swift
 //  CITRARB
 //
-//  Created by Richard Uzor on 07/09/2023.
+//  Created by Richard Uzor on 13/09/2023.
 //
 
 import SwiftUI
 import CachedAsyncImage
 
 
-struct ProductItemView: View {
-    
-    let productItem: Product
+struct MusicItemView: View {
+    let musicItem: Music
     
     var body: some View {
         HStack{
             //use the cachedasyncimage library to load and cache the news image from the url
-            CachedAsyncImage(url: URL(string: "\(BASE_NORMAL_URL)\(productItem.images.first!)"),
+            CachedAsyncImage(url: URL(string: "\(BASE_NORMAL_URL)\(musicItem.image)"),
                              transaction: Transaction(animation: .easeInOut)){ phase in
                 //set an animation to display the placeholder image
                 if let image = phase.image{
@@ -35,18 +34,18 @@ struct ProductItemView: View {
                 }
             }
             VStack{
-                Text(productItem.name)
+                Text(musicItem.title)
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading).padding(4)
                 
-                Text("₦\(productItem.price)")
+                Text(musicItem.userId.username)
                     .fontWeight(.regular)
                     .frame(maxWidth: .infinity, alignment: .leading).padding(4)
                 
-                Text(productItem.userId.username)
-                    .fontWeight(.regular)
-                    .frame(maxWidth: .infinity, alignment: .leading).padding(4)
-                
+                //                Text(productItem.userId.username)
+                //                    .fontWeight(.regular)
+                //                    .frame(maxWidth: .infinity, alignment: .leading).padding(4)
+                //
                 
             }
             .padding()
@@ -54,9 +53,8 @@ struct ProductItemView: View {
     }
 }
 
-struct ProductItemView_Previews: PreviewProvider {
+struct MusicItemView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        ProductItemView(productItem: Product(_id: "123", price: 200, name: "Product Name", category: "Gadgets", images: ["https://citrab.onrender.com/product--1694312741563-2.jpeg"], description: "description", active: true, userId: ProductUser(_id: "123", username: "product owner", email: "a@e.com", role: "user", photo: "https://fastly.picsum.photos/id/9/5000/3269.jpg?hmac=cZKbaLeduq7rNB8X-bigYO8bvPIWtT-mh8GRXtU3vPc", createdAt: "07-Aug-2023", updatedAt: "07-Sep-2023", __v: 1, gender: "Male", phone: "08132665650")))
+        MusicItemView(musicItem: Music(_id: "123", file: "https://pixabay.com/music/meditationspiritual-ambient-relaxing-music-for-you-15969/", title: "Music Title", userId: MusicOwner(_id: "123", username: "Davido", email: "davido@email.com", role: "user", photo: "https://citrab.onrender.com/music-cover--16866649712495016.jpeg", phone: "08132665650", gender: "Male", createdAt: "12-08-2023", updatedAt: "12-08-2023", __v: 1), description: "Music Description", isVerified: false, image: "Whi ompice dt ratiner", createdAt: "12-89-203", updatedAt: "12-89-2003", reactions: ["String"], id: "123"))
     }
 }

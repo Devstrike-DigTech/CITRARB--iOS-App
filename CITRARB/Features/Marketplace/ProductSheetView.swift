@@ -18,6 +18,8 @@ struct ProductSheetView: View {
     
     var body: some View {
         VStack{
+            //put carousel of images here
+        
             HStack{
                 Text(productItem.name).font(.title2)
                 Spacer()
@@ -69,8 +71,11 @@ struct ProductSheetView: View {
     
     
     func makeCall(phoneNumber: String){
-        showAlert = true
-        alertMessage = "Call Clicked!"
+        if let phoneURL = URL(string: "tel://\(phoneNumber)") {
+            UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+        }
+        //showAlert = true
+        //alertMessage = "Call Clicked!"
     }
     func shareConnect(phoneNumber: String){
         showAlert = true
