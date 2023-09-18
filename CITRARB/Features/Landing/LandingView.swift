@@ -12,6 +12,8 @@ struct LandingView: View {
     @State private var isPresentingNewScreen = false
     @State private var isPresentingLoginScreen = false
     @State private var showAlert = false
+    @StateObject var viewModel = ProfileViewModel()
+
 
     
     
@@ -37,6 +39,7 @@ struct LandingView: View {
                                     // Use the retrieved token
                                     //showAlert = true
                                 }else{
+                                    viewModel.isShowingLogin.toggle()
                                     isPresentingLoginScreen = true
                                 }
                                 
@@ -48,7 +51,7 @@ struct LandingView: View {
                             
                     }
                     .sheet(isPresented: $isPresentingLoginScreen){
-                        LoginView()
+                        LoginView(loginItemPresented: $viewModel.isShowingLogin)
                     }
                     .alert(isPresented: $showAlert) {
                                  Alert(
@@ -217,18 +220,20 @@ struct LandingView: View {
                             .cornerRadius(30)
                             .shadow(color: MUSIC_COLOR,radius: 5)
                         }
-                        ZStack{
-                            MenuItemView(animation: "citrarb_uploads_menu")
-                            Text("Uploads")
-                                .bold()
-                                .foregroundColor(.white)
-                                .offset(y: 50)
-                                .font(.system(size: 18))
-                                .padding(8)
+                        NavigationLink(destination: UploadsLandingView()){
+                            ZStack{
+                                MenuItemView(animation: "citrarb_uploads_menu")
+                                Text("Uploads")
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .offset(y: 50)
+                                    .font(.system(size: 18))
+                                    .padding(8)
+                            }
+                            .background(UPLOADS_COLOR)
+                            .cornerRadius(30)
+                            .shadow(color: UPLOADS_COLOR,radius: 5)
                         }
-                        .background(UPLOADS_COLOR)
-                        .cornerRadius(30)
-                        .shadow(color: UPLOADS_COLOR,radius: 5)
                     }
                 }
                 .padding(8)

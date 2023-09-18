@@ -103,6 +103,13 @@
 		45CCA0112A651F450071C5C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CCA0102A651F450071C5C6 /* ContentView.swift */; };
 		45CCA0132A651F4B0071C5C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CCA0122A651F4B0071C5C6 /* Assets.xcassets */; };
 		45CCA0162A651F4B0071C5C6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45CCA0152A651F4B0071C5C6 /* Preview Assets.xcassets */; };
+		45CF766E2AB6DA0E00D83E5F /* UploadsLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF766D2AB6DA0E00D83E5F /* UploadsLandingView.swift */; };
+		45CF76702AB6E36D00D83E5F /* UploadedProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF766F2AB6E36D00D83E5F /* UploadedProductsView.swift */; };
+		45CF76722AB6F77000D83E5F /* UploadedMusicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF76712AB6F77000D83E5F /* UploadedMusicView.swift */; };
+		45CF76742AB6F8BE00D83E5F /* UploadedEyeWitnessReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF76732AB6F8BE00D83E5F /* UploadedEyeWitnessReports.swift */; };
+		45CF76762AB6FEC700D83E5F /* UploadedMusicSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF76752AB6FEC700D83E5F /* UploadedMusicSheetView.swift */; };
+		45CF76782AB7A90100D83E5F /* UploadedProductsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF76772AB7A90100D83E5F /* UploadedProductsSheetView.swift */; };
+		45CF767A2AB7A93A00D83E5F /* UploadedReportsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF76792AB7A93A00D83E5F /* UploadedReportsSheetView.swift */; };
 		45DC56A32AACFA0E00A31103 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC56A22AACFA0E00A31103 /* Data+Extensions.swift */; };
 		45E5DA262A9650060024A96D /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 45E5DA252A9650060024A96D /* SlidingTabView */; };
 		45E5DA282A9651ED0024A96D /* MembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5DA272A9651EC0024A96D /* MembersView.swift */; };
@@ -210,6 +217,13 @@
 		45CCA0102A651F450071C5C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		45CCA0122A651F4B0071C5C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45CCA0152A651F4B0071C5C6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		45CF766D2AB6DA0E00D83E5F /* UploadsLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadsLandingView.swift; sourceTree = "<group>"; };
+		45CF766F2AB6E36D00D83E5F /* UploadedProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedProductsView.swift; sourceTree = "<group>"; };
+		45CF76712AB6F77000D83E5F /* UploadedMusicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedMusicView.swift; sourceTree = "<group>"; };
+		45CF76732AB6F8BE00D83E5F /* UploadedEyeWitnessReports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedEyeWitnessReports.swift; sourceTree = "<group>"; };
+		45CF76752AB6FEC700D83E5F /* UploadedMusicSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedMusicSheetView.swift; sourceTree = "<group>"; };
+		45CF76772AB7A90100D83E5F /* UploadedProductsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedProductsSheetView.swift; sourceTree = "<group>"; };
+		45CF76792AB7A93A00D83E5F /* UploadedReportsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedReportsSheetView.swift; sourceTree = "<group>"; };
 		45DC56A22AACFA0E00A31103 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		45E5DA272A9651EC0024A96D /* MembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersView.swift; sourceTree = "<group>"; };
 		45E5DA292A9652EF0024A96D /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
@@ -484,6 +498,13 @@
 			isa = PBXGroup;
 			children = (
 				45A3E24B2A658081007CE9BE /* UploadsViewModel.swift */,
+				45CF766D2AB6DA0E00D83E5F /* UploadsLandingView.swift */,
+				45CF766F2AB6E36D00D83E5F /* UploadedProductsView.swift */,
+				45CF76712AB6F77000D83E5F /* UploadedMusicView.swift */,
+				45CF76732AB6F8BE00D83E5F /* UploadedEyeWitnessReports.swift */,
+				45CF76752AB6FEC700D83E5F /* UploadedMusicSheetView.swift */,
+				45CF76772AB7A90100D83E5F /* UploadedProductsSheetView.swift */,
+				45CF76792AB7A93A00D83E5F /* UploadedReportsSheetView.swift */,
 			);
 			path = Uploads;
 			sourceTree = "<group>";
@@ -714,10 +735,13 @@
 				45A3E26D2A659235007CE9BE /* NewsItemView.swift in Sources */,
 				45819D402A7AB69300D91A75 /* TVSheetViewModel.swift in Sources */,
 				458222B82A67DE0A006B9058 /* TVAPI.swift in Sources */,
+				45CF76702AB6E36D00D83E5F /* UploadedProductsView.swift in Sources */,
 				4584C5B62AA461B800405076 /* SearchBarView.swift in Sources */,
 				4580F26D2AA63BE600DE775E /* NewConnectView.swift in Sources */,
 				4584C5BA2AA5DD3000405076 /* ConnectItemView.swift in Sources */,
 				4590D4072AAF394F00079224 /* EventsLandingView.swift in Sources */,
+				45CF76782AB7A90100D83E5F /* UploadedProductsSheetView.swift in Sources */,
+				45CF767A2AB7A93A00D83E5F /* UploadedReportsSheetView.swift in Sources */,
 				4582FED72AB5AB700091F88D /* VideoPlayerView.swift in Sources */,
 				450115A12A7C1C0600DE07B4 /* FriendsListItemView.swift in Sources */,
 				457168FA2A66916000FDBBE8 /* LandingView.swift in Sources */,
@@ -726,6 +750,7 @@
 				45A3E2582A658121007CE9BE /* TVViewModel.swift in Sources */,
 				45EF81AE2A67D15F00946B88 /* TVListItemView.swift in Sources */,
 				4580F26B2AA6180E00DE775E /* ConnectsAPI.swift in Sources */,
+				45CF766E2AB6DA0E00D83E5F /* UploadsLandingView.swift in Sources */,
 				458222B62A67D713006B9058 /* TVData.swift in Sources */,
 				4599C4362AB1874200576B2E /* MusicSheetView.swift in Sources */,
 				4582FED12AB58A9F0091F88D /* EyeWitnessItemView.swift in Sources */,
@@ -736,6 +761,7 @@
 				45819D4A2A7AF58900D91A75 /* Extensions.swift in Sources */,
 				45A3E24E2A658092007CE9BE /* MusicViewModel.swift in Sources */,
 				4580E3652AB0E9CD0028EC32 /* EventsSheetView.swift in Sources */,
+				45CF76742AB6F8BE00D83E5F /* UploadedEyeWitnessReports.swift in Sources */,
 				4590D40C2AB0850A00079224 /* EventsData.swift in Sources */,
 				45E5DA312A9657C40024A96D /* MembersData.swift in Sources */,
 				4582FED52AB598A00091F88D /* NewEyeWitnessReportSheet.swift in Sources */,
@@ -767,9 +793,11 @@
 				4590D40A2AB070FB00079224 /* EventItemView.swift in Sources */,
 				45A3E25E2A65816B007CE9BE /* RegisterView.swift in Sources */,
 				457DF5F62A96C78D00EE31CA /* MemberSheetView.swift in Sources */,
+				45CF76762AB6FEC700D83E5F /* UploadedMusicSheetView.swift in Sources */,
 				45819D3E2A7AB44300D91A75 /* TVSheetView.swift in Sources */,
 				4582FECD2AB587D60091F88D /* EyeWitnessAPI.swift in Sources */,
 				4582FECF2AB589DD0091F88D /* EyeWitnessReportLandingView.swift in Sources */,
+				45CF76722AB6F77000D83E5F /* UploadedMusicView.swift in Sources */,
 				45A3E2542A658106007CE9BE /* MembersViewModel.swift in Sources */,
 				4599C42E2AB12E9600576B2E /* MusicData.swift in Sources */,
 				45A3E2382A6568D7007CE9BE /* LottieView.swift in Sources */,

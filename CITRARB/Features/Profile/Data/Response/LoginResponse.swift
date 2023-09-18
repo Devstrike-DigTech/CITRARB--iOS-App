@@ -50,6 +50,36 @@ struct SignupUser: Codable {
     let active: Bool
 }
 
+struct GetMeResponse: Codable{
+    let status: String
+    let user: ProfileUser
+    let occupation: ProfileOccupation
+}
+
+struct ProfileUser: Codable{
+    let _id: String
+    let username: String
+    let email: String
+    let role: String
+    let photo: String
+    let gender: String?
+    let phone: String?
+    let createdAt: String
+    let updatedAt: String
+    let __v: Int
+}
+
+let ProfileOccupation: Codable{
+    let _id: String
+    let name: String
+    let jobTitle: String
+    let phone: String
+    let category: String
+    let description: String
+    let userId: String
+    let __v: Int
+}
+
 
 
 

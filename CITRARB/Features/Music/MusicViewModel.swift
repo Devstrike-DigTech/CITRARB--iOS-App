@@ -32,6 +32,9 @@ class MusicViewModel: NSObject, ObservableObject, URLSessionDelegate{
     
     var audioPlayer: AVPlayer?
 
+    var userId = ""
+    @Published var requestType: String = ""
+
     
     
     @Published var uploadProgressHandler: ((Double) -> Void)?
@@ -40,7 +43,11 @@ class MusicViewModel: NSObject, ObservableObject, URLSessionDelegate{
     
     
     func fetchMusicList() {
-        apiClient.fetchMusicList { result in
+        if requestType == "mine"{
+            userId = userID
+        }
+        print("user id\(userId)")
+        apiClient.fetchMusicList(userId: userId) { result in
             switch result {
             case .success(let musicListResponse):
                 DispatchQueue.main.async {
@@ -128,6 +135,34 @@ class MusicViewModel: NSObject, ObservableObject, URLSessionDelegate{
         
         
     }
+    
+    
+    func deleteMusic(musicId: String) {
+        
+        apiClient.deleteMusic(musicId: musicId) { result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    //let updatedData = musicListResponse
+                    //self.musicListResponse = updatedData
+                    //                        .members.map { item in
+                    //                        var updatedItem = item
+                    //
+                    //                        return updatedItem
+                    //                    }
+                    //                    self.membersListResponse = MembersListResponse(members: updatedData, status: membersListResponse.status)
+                }
+            case .failure(let error):
+                print("Error fetching data: \(error)")
+                self.isLoading = false
+                // Handle error (e.g., show an alert)
+                
+            }
+        }
+        
+    }
+    
     //
     // URLSessionDelegate method to capture upload progress
     func urlSession(_ session: URLSession, task: URLSessionTask, didSendBodyData bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) {

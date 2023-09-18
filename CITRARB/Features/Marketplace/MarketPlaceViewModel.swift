@@ -29,23 +29,19 @@ class MarketPlaceViewModel: NSObject, ObservableObject, URLSessionDelegate{
 
     @Published var uploadProgressHandler: ((Double) -> Void)?
 
-
-//
-//    init(api: MarketPlaceAPIClient) {
-//            api.uploadProgressHandler = { [weak self] progress in
-//                DispatchQueue.main.async {
-//                    self?.uploadProgress = progress
-//                }
-//            }
-//        }
-
+    var userId = ""
+    @Published var requestType: String = ""
 
     
     let apiClient = MarketPlaceAPIClient()
     
     
     func fetchProductsList() {
-        apiClient.fetchProductsList { result in
+        if requestType == "mine"{
+            userId = userID
+        }
+        print("user id\(userId)")
+            apiClient.fetchProductsList(userId: userId) { result in
             switch result {
             case .success(let productsListResponse):
                 DispatchQueue.main.async {
@@ -119,6 +115,31 @@ class MarketPlaceViewModel: NSObject, ObservableObject, URLSessionDelegate{
         session.finishTasksAndInvalidate()
 
  
+        
+    }
+    func deleteProduct(productId: String) {
+        
+        apiClient.deleteProduct(productId: productId) { result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    //let updatedData = musicListResponse
+                    //self.musicListResponse = updatedData
+                    //                        .members.map { item in
+                    //                        var updatedItem = item
+                    //
+                    //                        return updatedItem
+                    //                    }
+                    //                    self.membersListResponse = MembersListResponse(members: updatedData, status: membersListResponse.status)
+                }
+            case .failure(let error):
+                print("Error fetching data: \(error)")
+                self.isLoading = false
+                // Handle error (e.g., show an alert)
+                
+            }
+        }
         
     }
     

@@ -27,6 +27,8 @@ class EyeWitnessReportViewModel: NSObject, ObservableObject, URLSessionDelegate{
     @Published var selectedReportFile: URL? = URL(string: "")
     
     @Published var uploadProgressHandler: ((Double) -> Void)?
+    var userId = ""
+    @Published var requestType: String = ""
 
 
     
@@ -34,7 +36,11 @@ class EyeWitnessReportViewModel: NSObject, ObservableObject, URLSessionDelegate{
     
     
     func fetchReportsList() {
-        apiClient.fetchReportsList { result in
+        if requestType == "mine"{
+            userId = userID
+        }
+        print("user id\(userId)")
+        apiClient.fetchReportsList(userId: userId) { result in
             switch result {
             case .success(let reportsListResponse):
                 DispatchQueue.main.async {
@@ -47,6 +53,32 @@ class EyeWitnessReportViewModel: NSObject, ObservableObject, URLSessionDelegate{
 //                        return updatedItem
 //                    }
 //                    self.membersListResponse = MembersListResponse(members: updatedData, status: membersListResponse.status)
+                }
+            case .failure(let error):
+                print("Error fetching data: \(error)")
+                self.isLoading = false
+                // Handle error (e.g., show an alert)
+                
+            }
+        }
+        
+    }
+    
+    func deleteReport(reportId: String) {
+        
+        apiClient.deleteReport(reportId: reportId) { result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.isLoading = false
+                    //let updatedData = musicListResponse
+                    //self.musicListResponse = updatedData
+                    //                        .members.map { item in
+                    //                        var updatedItem = item
+                    //
+                    //                        return updatedItem
+                    //                    }
+                    //                    self.membersListResponse = MembersListResponse(members: updatedData, status: membersListResponse.status)
                 }
             case .failure(let error):
                 print("Error fetching data: \(error)")

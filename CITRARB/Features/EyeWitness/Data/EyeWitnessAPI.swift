@@ -10,8 +10,13 @@ import Combine
 import UIKit
 
 class EyeWitnessAPIClient: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
-    func fetchReportsList(completion: @escaping (Result<GetAllEyeWitnessResponse, Error>) -> Void) {
-        let urlString = "\(BASE_URL)eye_witness/"
+    func fetchReportsList(userId: String, completion: @escaping (Result<GetAllEyeWitnessResponse, Error>) -> Void) {
+        var urlString = ""
+        if userId == ""{
+            urlString = "\(BASE_URL)eye_witness/"
+        }else{
+            urlString = "\(BASE_URL)eye_witness/?userId=\(userId)"
+        }
         
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
@@ -59,6 +64,60 @@ class EyeWitnessAPIClient: NSObject, URLSessionDelegate, URLSessionTaskDelegate 
         }.resume()
         
     }
+    
+    
+    func deleteReport(reportId: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+            let urlString = "\(BASE_URL)eye_witness/\(reportId)"
+       
+        
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization") // Add the bearer token
+        print(token)
+        
+        //if let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                print(error)
+                return
+            }
+            
+            
+            if let data = data {
+                print(data)
+                // Convert the data to a string and print it
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("Eyewitness Report Delete Response data: \(responseString)")
+                } else {
+                    print("Response data cannot be converted to a string.")
+                }
+                do {
+//                    let decoder = JSONDecoder()
+                    //decoder.keyDecodingStrategy = .convertFromSnakeCase // Handle snake_case to camelCase conversion if needed
+//                    let musicListResponse = try decoder.decode(GetAllMusicResponse.self, from: data)
+//                    completion(.success(musicListResponse))
+                    print("response: success")
+                    
+                } catch {
+                    completion(.failure(error))
+                    print(error)
+                }
+            } else {
+                
+                completion(.failure(NSError(domain: "Data is nil", code: -1, userInfo: nil)))
+            }
+        }.resume()
+        
+    }
+    
     
     
     enum EyeWitnessError: Error {

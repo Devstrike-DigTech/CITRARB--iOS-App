@@ -11,8 +11,13 @@ import UIKit
 
 class MusicAPIClient: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
     
-    func fetchMusicList(completion: @escaping (Result<GetAllMusicResponse, Error>) -> Void) {
-        let urlString = "\(BASE_URL)music/"
+    func fetchMusicList(userId: String, completion: @escaping (Result<GetAllMusicResponse, Error>) -> Void) {
+        var urlString = ""
+        if userId == ""{
+            urlString = "\(BASE_URL)music/"
+        }else{
+            urlString = "\(BASE_URL)music/?userId=\(userId)"
+        }
         
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
@@ -48,6 +53,59 @@ class MusicAPIClient: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
                     let musicListResponse = try decoder.decode(GetAllMusicResponse.self, from: data)
                     completion(.success(musicListResponse))
                     print("response: \(musicListResponse)")
+                    
+                } catch {
+                    completion(.failure(error))
+                    print(error)
+                }
+            } else {
+                
+                completion(.failure(NSError(domain: "Data is nil", code: -1, userInfo: nil)))
+            }
+        }.resume()
+        
+    }
+    
+    
+    func deleteMusic(musicId: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        
+            let urlString = "\(BASE_URL)music/\(musicId)"
+       
+        
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization") // Add the bearer token
+        print(token)
+        
+        //if let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                print(error)
+                return
+            }
+            
+            
+            if let data = data {
+                print(data)
+                // Convert the data to a string and print it
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("Music Delete Response data: \(responseString)")
+                } else {
+                    print("Response data cannot be converted to a string.")
+                }
+                do {
+//                    let decoder = JSONDecoder()
+                    //decoder.keyDecodingStrategy = .convertFromSnakeCase // Handle snake_case to camelCase conversion if needed
+//                    let musicListResponse = try decoder.decode(GetAllMusicResponse.self, from: data)
+//                    completion(.success(musicListResponse))
+                    print("response: success")
                     
                 } catch {
                     completion(.failure(error))

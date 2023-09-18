@@ -12,6 +12,8 @@ import Combine
 class ProfileViewModel: ObservableObject{
     
     @Published var isLoading: Bool = true
+    @Published var isShowingLogin: Bool = false
+    @Published var isShowingRegister: Bool = false
     
     @Published var token: String?
     @Published var error: String?

@@ -36,9 +36,9 @@ class AuthService {
 
         let task = URLSession.shared.dataTask(with: request){ data, _, error in
             if let error = error {
-                completion(.failure(error as! AuthService.AuthError))
-                           return
-                       }
+                print(error)
+                return
+            }
                        
                        guard let data = data else {
                            completion(.failure(.noData))
@@ -49,8 +49,10 @@ class AuthService {
                            let response = try decoder.decode(LoginResponse.self, from: data)
                            completion(.success(response))
                            UserDefaults.standard.set(response.token, forKey: AUTH_TOKEN_KEY)
+                           UserDefaults.standard.set(response.user._id, forKey: USER_ID)
+
                        } catch {
-                           completion(.failure(error as! AuthService.AuthError))
+                           print(error)
                        }
             
         }
@@ -92,6 +94,7 @@ class AuthService {
                            let response = try decoder.decode(SignupResponse.self, from: data)
                            completion(.success(response))
                            UserDefaults.standard.set(response.token, forKey: AUTH_TOKEN_KEY)
+                           UserDefaults.standard.set(response.user._id, forKey: USER_ID)
                        } catch {
                            completion(.failure(error as! AuthService.AuthError))
                        }

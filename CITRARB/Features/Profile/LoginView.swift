@@ -13,6 +13,8 @@ struct LoginView: View {
     @State private var password = ""
     
     @StateObject var viewModel = ProfileViewModel()
+    @Binding var loginItemPresented: Bool
+
     
     var body: some View {
         
@@ -23,45 +25,55 @@ struct LoginView: View {
                     //Header
                     HeaderView(title: "Login", subTitle: "Enter details to login", background: .pink)
                     //Login Form
-                    //Form{
-                    if ((viewModel.error?.isEmpty) == false){
-                        Text(viewModel.error ?? "")
+                    Form{
+                        if ((viewModel.error?.isEmpty) == false){
+                            Text(viewModel.error ?? "")
                                 .foregroundColor(.red)
                         }
-                        TextField("Email Address", text: $email)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .autocorrectionDisabled()
-                            .autocapitalization(.none)
-                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
+                        Section(header: Text("Enter Email Address")){
+                            TextField("Email Address", text: $email)
+                        }
                         
-                        SecureField("Password", text: $password)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .autocorrectionDisabled()
-                            .autocapitalization(.none)
-                            .padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
+                        Section(header: Text("Enter Password")){
+                            
+                            SecureField("Password", text: $password)
+                            
+                        }
                         
-                    //}.padding(EdgeInsets(top: 0, leading: 16, bottom: 4, trailing: 16))
-                  
+                        TLButton(btnText: "Log In", backgoundColor: .blue, width: 256){
+                            viewModel.login(email: email, password: password)
+                            loginItemPresented = false
+                        }.frame(maxWidth: .infinity, alignment: .center)
+                        .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
+                        
+                        
+                        //Create Account
+                        VStack{
+                            Text("New around here?")
+                                .padding()
+                                .onTapGesture {
+                                    loginItemPresented = false
+                                }
+                            Text("Create an account")
+                                .fontWeight(.bold)
+                                .foregroundColor(.blue)
+                                .onTapGesture {
+                                    viewModel.isShowingRegister.toggle()
+                                }.sheet(isPresented: $viewModel.isShowingRegister){
+                                    RegisterView(registerItemPresented: $viewModel.isShowingRegister)
+                                }
+                            //NavigationLink("Create An Account", destination: RegisterView())
+                            
+                        }
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    }
                     
                     if let error = viewModel.error {
                                   Text(error)
                                       .foregroundColor(.red)
                               }
-                    
-                    TLButton(btnText: "Log In", backgoundColor: .blue, width: 256){
-                        viewModel.login(email: email, password: password)
-                    }
-                    .padding(EdgeInsets(top: 16, leading: 16, bottom: 4, trailing: 16))
-                    
-                    
-                    //Create Account
-                    VStack{
-                        Text("New around here?")
-                            .padding()
-                        NavigationLink("Create An Account", destination: RegisterView())
-                        
-                    }.padding(.bottom, 50)
-                    Spacer()
+              
+                  
                 }
                 
 //                if viewModel.isLoading == false{
@@ -85,6 +97,10 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(loginItemPresented: Binding(get: {
+            return true
+        }, set: { _ in
+            
+        }))
     }
 }
