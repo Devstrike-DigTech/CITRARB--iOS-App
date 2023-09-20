@@ -121,5 +121,59 @@ class ConnectAPIClient{
         }
         task.resume()
     }
+     
+    func updateConnect(occupationId: String, jobTitle: String, description: String, phone: String, name: String, category: String, completion: @escaping (Result<NewConnectResponse, ConnectError>) -> Void)  {
+        let url = URL(string: "\(BASE_URL)occupations/\(occupationId)")! // Replace with your API URL
+
+        print("making create connect api call...")
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization") // Add the bearer token
+
+        let body: [String: AnyHashable] = [
+            "jobTitle": jobTitle,
+            "description": description,
+            "phone": phone,
+            "name": name,
+            "category": category
+        ]
+
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+        let task = URLSession.shared.dataTask(with: request){ data, _, error in
+            if let error = error {
+                completion(.failure(error as! ConnectAPIClient.ConnectError))
+                           return
+                       }
+                       
+                       guard let data = data else {
+                           completion(.failure(.noData))
+                           return
+                       }
+                       
+                       do {
+                           let response = try decoder.decode(NewConnectResponse.self, from: data)
+                           
+                           let createdOccupation = response.data
+
+                           print("createdOccupation: \(createdOccupation)")
+                           completion(.success(response))
+
+                       } catch let decodingError as DecodingError {
+                           print("Decoding error: \(decodingError)")
+                           completion(.failure(.decodingError(decodingError)))
+                       }catch {
+                           // Handle other non-decoding errors
+                           print("Error: \(error)")
+                       }
+            
+        }
+        task.resume()
+    }
     
 }

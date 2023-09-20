@@ -102,6 +102,39 @@ class ConnectsViewModel: ObservableObject{
         }
         
     }
+     
+    func updateConnect(occupationId: String){
+        isLoading = true
+        guard canSave() else{
+            return
+        }
+        apiClient.updateConnect(occupationId: occupationId,jobTitle: jobTitle, description: description, phone: phone, name: name, category: category){ result in
+            DispatchQueue.main.async {
+                switch result{
+                case .success(let response):
+                    print("SUCCESS: \(response)")
+                    self.showingNewItemView = false
+                    
+                case .failure(let error):
+                    switch error {
+                    case .networkError(let networkError):
+                        print("NETWORK ERROR: \(networkError)")
+                        self.error = "Check your internet connection"
+                        // Handle network error
+                    case .noData:
+                        print("NO DATA ERROR")
+                        // Handle no data error
+                    case .decodingError(let decodingError):
+                        print("DECODING ERROR: \(decodingError)")
+                        // Handle decoding error
+                        
+                    }
+                }
+                
+            }
+        }
+        
+    }
     
     
     
@@ -124,7 +157,7 @@ class ConnectsViewModel: ObservableObject{
             showAlert = true
             return false
         }
-        guard phoneNumberCharCount != 11 else{
+        guard phoneNumberCharCount == 11 else{
             error = "Phone number should have 11 characters."
             showAlert = true
             return false

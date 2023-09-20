@@ -11,7 +11,9 @@ struct LandingView: View {
     
     @State private var isPresentingNewScreen = false
     @State private var isPresentingLoginScreen = false
+    @State private var isShowingProfileView: Bool = false
     @State private var showAlert = false
+    
     @StateObject var viewModel = ProfileViewModel()
 
 
@@ -31,6 +33,15 @@ struct LandingView: View {
                             .bold()
                             .font(.title)
                             .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 8))
+                        NavigationLink(
+                                  destination: ProfileView(),
+                                  //tag: true,
+                                  isActive: $isShowingProfileView,
+                                  label: {
+                                      EmptyView()
+                                  }
+                              )
+                              
                         Image(systemName: "person")
                             .frame(alignment: .trailing)
                             .font(.title)
@@ -38,6 +49,7 @@ struct LandingView: View {
                                 if UserDefaults.standard.string(forKey: "AuthToken") != nil {
                                     // Use the retrieved token
                                     //showAlert = true
+                                    isShowingProfileView = true
                                 }else{
                                     viewModel.isShowingLogin.toggle()
                                     isPresentingLoginScreen = true

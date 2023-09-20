@@ -103,6 +103,109 @@ class AuthService {
         task.resume()
     }
     
+    func fetchUserProfile(completion: @escaping (Result<GetMeResponse, Error>) -> Void) {
+        let urlString = "\(BASE_URL)users/me"
+       
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization") // Add the bearer token
+        print(token)
+        
+        //if let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                print(error)
+                return
+            }
+            
+            
+            if let data = data {
+                print(data)
+                // Convert the data to a string and print it
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("User Profile Response data: \(responseString)")
+                } else {
+                    print("Response data cannot be converted to a string.")
+                }
+                do {
+                    let decoder = JSONDecoder()
+                    //decoder.keyDecodingStrategy = .convertFromSnakeCase // Handle snake_case to camelCase conversion if needed
+                    let userResponse = try decoder.decode(GetMeResponse.self, from: data)
+                    completion(.success(userResponse))
+                    print("response: \(userResponse)")
+                    
+                } catch {
+                    completion(.failure(error))
+                    print(error)
+                }
+            } else {
+                
+                completion(.failure(NSError(domain: "Data is nil", code: -1, userInfo: nil)))
+            }
+        }.resume()
+        
+    }
+    
+    func deleteMe(completion: @escaping (Result<Void, Error>) -> Void) {
+        
+            let urlString = "\(BASE_URL)users/"
+       
+        
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization") // Add the bearer token
+        print(token)
+        
+        //if let url = URL(string: urlString)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                print(error)
+                return
+            }
+            
+            
+            if let data = data {
+                print(data)
+                // Convert the data to a string and print it
+                if let responseString = String(data: data, encoding: .utf8) {
+                    print("Delete Me Response data: \(responseString)")
+                } else {
+                    print("Response data cannot be converted to a string.")
+                }
+                do {
+//                    let decoder = JSONDecoder()
+                    //decoder.keyDecodingStrategy = .convertFromSnakeCase // Handle snake_case to camelCase conversion if needed
+//                    let musicListResponse = try decoder.decode(GetAllMusicResponse.self, from: data)
+//                    completion(.success(musicListResponse))
+                    print("response: success")
+                    
+                } catch {
+                    completion(.failure(error))
+                    print(error)
+                }
+            } else {
+                
+                completion(.failure(NSError(domain: "Data is nil", code: -1, userInfo: nil)))
+            }
+        }.resume()
+        
+    }
+    
+    
     
 }
 

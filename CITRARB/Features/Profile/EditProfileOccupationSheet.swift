@@ -1,17 +1,17 @@
 //
-//  NewConnectView.swift
+//  EditProfileOccupationSheet.swift
 //  CITRARB
 //
-//  Created by Richard Uzor on 04/09/2023.
+//  Created by Richard Uzor on 19/09/2023.
 //
 
 import SwiftUI
 
-struct NewConnectView: View {
-    
+struct EditProfileOccupationSheet: View {
     @StateObject var viewModel = ConnectsViewModel()
     
     @Binding var newItemPresented: Bool
+    let occupationToEdit: ProfileOccupation
     
     
     
@@ -25,13 +25,13 @@ struct NewConnectView: View {
         NavigationView{
             VStack{
                 
-                Text("Add Your Occupation")
+                Text("Update Your Occupation")
                     .font(.title)
                     .fontWeight(.heavy)
                     .padding()
 //                if viewModel.isLoading == false{
                     Form{
-                        Section(header: Text("Enter Your Name")){
+                        Section(header: Text("Enter Updated Name")){
                             VStack{
                                 TextField("Name", text: $viewModel.name)
                             }
@@ -73,9 +73,9 @@ struct NewConnectView: View {
                             }
                         })
                         
-                        Button("Add Occupation"){
+                        Button("Update Occupation"){
                             if viewModel.canSave(){
-                                viewModel.createNewConnect()
+                                viewModel.updateConnect(occupationId: occupationToEdit._id)
                                 newItemPresented = false
 
                             }else{
@@ -100,22 +100,26 @@ struct NewConnectView: View {
                 
             }
             
-        } .alert(isPresented: $viewModel.showAlert){
+        }.onAppear{
+            viewModel.name = occupationToEdit.name
+            viewModel.phone = occupationToEdit.phone
+            viewModel.jobTitle = occupationToEdit.jobTitle
+            viewModel.category = occupationToEdit.category
+            viewModel.description = occupationToEdit.description
+        }
+        .alert(isPresented: $viewModel.showAlert){
             Alert(title: Text("Error"), message: Text(viewModel.error!))
-        }            .navigationTitle("Add Your Occupation")
+        }            .navigationTitle("Update Your Occupation")
         
     }
-    
 }
 
-
-
-struct NewConnectView_Previews: PreviewProvider {
+struct EditProfileOccupationSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewConnectView(newItemPresented: Binding(get: {
+        EditProfileOccupationSheet(newItemPresented: Binding(get: {
             return true
         }, set: { _ in
             
-        }))
+        }), occupationToEdit: ProfileOccupation(_id: "123", name: "Luomy EQua", jobTitle: "Carpenter", phone: "08134527878", category: "Medical", description: "The noble occupation of beautification", userId: "1122", __v: 0))
     }
 }

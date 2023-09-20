@@ -29,10 +29,17 @@ class EventsViewModel: NSObject, ObservableObject, URLSessionDelegate{
     @Published var uploadProgressHandler: ((Double) -> Void)?
 
     let apiClient = EventsAPIClient()
+    var userId = ""
+    @Published var requestType: String = ""
+
+   
     
     
     func fetchEventsList() {
-        apiClient.fetchEventsList { result in
+        if requestType == "mine"{
+            userId = userID
+        }
+        apiClient.fetchEventsList(userId: userId) { result in
             switch result {
             case .success(let eventsListResponse):
                 DispatchQueue.main.async {

@@ -15,7 +15,7 @@ struct UploadsLandingView: View {
     var body: some View {
         NavigationView{
             VStack{
-                SlidingTabView(selection: $tabIndex, tabs: ["Products", "Music", "Reports"], animation: .easeInOut, activeAccentColor: UPLOADS_COLOR, selectionBarColor: UPLOADS_COLOR)
+                SlidingTabView(selection: $tabIndex, tabs: ["Products", "Music", "Reports", "Events"], animation: .easeInOut, activeAccentColor: UPLOADS_COLOR, selectionBarColor: UPLOADS_COLOR)
                 Spacer()
                 
                 if tabIndex == 0{
@@ -24,6 +24,8 @@ struct UploadsLandingView: View {
                     UploadedMusicView()
                 }else if tabIndex == 2{
                     UploadedEyeWitnessReports()
+                }else if tabIndex == 3{
+                    
                 }
                 
                 Spacer()

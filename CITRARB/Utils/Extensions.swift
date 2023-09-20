@@ -62,6 +62,30 @@ public func formatDateString(_ dateString: String) -> String? {
     return nil
 }
 
+
+public func formatDateToMonthAndYear(_ dateString: String) -> String? {
+    // Create a DateFormatter to parse the input date string
+    let inputFormatter = DateFormatter()
+    inputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    inputFormatter.timeZone = TimeZone(abbreviation: "UTC")
+    
+    // Parse the input date string into a Date object
+    if let date = inputFormatter.date(from: dateString) {
+        // Create a DateFormatter for the desired output format
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "MMMM, yyyy"
+//        outputFormatter.amSymbol = "AM"
+//        outputFormatter.pmSymbol = "PM"
+        
+        // Format the date into the desired output format
+        let formattedDateString = outputFormatter.string(from: date)
+        return formattedDateString
+    }
+    
+    // Return nil for invalid input
+    return nil
+}
+
 import EventKit
 import EventKitUI
 

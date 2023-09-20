@@ -11,8 +11,14 @@ import UIKit
 
 class EventsAPIClient: NSObject, URLSessionDelegate, URLSessionTaskDelegate {
     
-    func fetchEventsList(completion: @escaping (Result<GetAllEvents, Error>) -> Void) {
-        let urlString = "\(BASE_URL)events/"
+    func fetchEventsList(userId: String,completion: @escaping (Result<GetAllEvents, Error>) -> Void) {
+        var urlString = ""
+        if userId == ""{
+            urlString = "\(BASE_URL)events/"
+        }else{
+            urlString = "\(BASE_URL)events/?userId=\(userId)"
+        }
+        
         
         guard let url = URL(string: urlString) else {
             completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))

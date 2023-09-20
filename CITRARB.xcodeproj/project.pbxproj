@@ -12,6 +12,9 @@
 		450115A12A7C1C0600DE07B4 /* FriendsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450115A02A7C1C0600DE07B4 /* FriendsListItemView.swift */; };
 		450115A32A7C1C3200DE07B4 /* FriendRequestItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450115A22A7C1C3200DE07B4 /* FriendRequestItemView.swift */; };
 		452E9D842AA5E9C300F6A0DD /* ConnectSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452E9D832AA5E9C300F6A0DD /* ConnectSheetView.swift */; };
+		453EB22C2AB997550003A976 /* ProfileOccupationDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453EB22B2AB997550003A976 /* ProfileOccupationDataView.swift */; };
+		456216442AB9B58E005E393D /* EditProfileOccupationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456216432AB9B58E005E393D /* EditProfileOccupationSheet.swift */; };
+		456216462AB9CDC4005E393D /* UploadedEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456216452AB9CDC4005E393D /* UploadedEventsView.swift */; };
 		457168E22A66871B00FDBBE8 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457168E12A66871B00FDBBE8 /* MenuItemView.swift */; };
 		457168E42A668FA900FDBBE8 /* citrarb_eye_witness_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168E32A668FA900FDBBE8 /* citrarb_eye_witness_menu.json */; };
 		457168E62A66908600FDBBE8 /* citrarb_music_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 457168E52A66908600FDBBE8 /* citrarb_music_menu.json */; };
@@ -53,6 +56,7 @@
 		4582FED32AB58D8E0091F88D /* EyeWitnessSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582FED22AB58D8E0091F88D /* EyeWitnessSheetView.swift */; };
 		4582FED52AB598A00091F88D /* NewEyeWitnessReportSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582FED42AB598A00091F88D /* NewEyeWitnessReportSheet.swift */; };
 		4582FED72AB5AB700091F88D /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4582FED62AB5AB700091F88D /* VideoPlayerView.swift */; };
+		4583C9072AB993F800B9741B /* ProfileBioDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4583C9062AB993F800B9741B /* ProfileBioDataView.swift */; };
 		4584C5B62AA461B800405076 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584C5B52AA461B800405076 /* SearchBarView.swift */; };
 		4584C5B82AA5DC8900405076 /* AllConnectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584C5B72AA5DC8900405076 /* AllConnectsView.swift */; };
 		4584C5BA2AA5DD3000405076 /* ConnectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584C5B92AA5DD3000405076 /* ConnectItemView.swift */; };
@@ -110,6 +114,7 @@
 		45CF76762AB6FEC700D83E5F /* UploadedMusicSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF76752AB6FEC700D83E5F /* UploadedMusicSheetView.swift */; };
 		45CF76782AB7A90100D83E5F /* UploadedProductsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF76772AB7A90100D83E5F /* UploadedProductsSheetView.swift */; };
 		45CF767A2AB7A93A00D83E5F /* UploadedReportsSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF76792AB7A93A00D83E5F /* UploadedReportsSheetView.swift */; };
+		45CF767C2AB9786C00D83E5F /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CF767B2AB9786C00D83E5F /* ToastView.swift */; };
 		45DC56A32AACFA0E00A31103 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DC56A22AACFA0E00A31103 /* Data+Extensions.swift */; };
 		45E5DA262A9650060024A96D /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 45E5DA252A9650060024A96D /* SlidingTabView */; };
 		45E5DA282A9651ED0024A96D /* MembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E5DA272A9651EC0024A96D /* MembersView.swift */; };
@@ -127,6 +132,9 @@
 		450115A02A7C1C0600DE07B4 /* FriendsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListItemView.swift; sourceTree = "<group>"; };
 		450115A22A7C1C3200DE07B4 /* FriendRequestItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRequestItemView.swift; sourceTree = "<group>"; };
 		452E9D832AA5E9C300F6A0DD /* ConnectSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectSheetView.swift; sourceTree = "<group>"; };
+		453EB22B2AB997550003A976 /* ProfileOccupationDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOccupationDataView.swift; sourceTree = "<group>"; };
+		456216432AB9B58E005E393D /* EditProfileOccupationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileOccupationSheet.swift; sourceTree = "<group>"; };
+		456216452AB9CDC4005E393D /* UploadedEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedEventsView.swift; sourceTree = "<group>"; };
 		457168E12A66871B00FDBBE8 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		457168E32A668FA900FDBBE8 /* citrarb_eye_witness_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_eye_witness_menu.json; sourceTree = "<group>"; };
 		457168E52A66908600FDBBE8 /* citrarb_music_menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citrarb_music_menu.json; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 		4582FED22AB58D8E0091F88D /* EyeWitnessSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeWitnessSheetView.swift; sourceTree = "<group>"; };
 		4582FED42AB598A00091F88D /* NewEyeWitnessReportSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEyeWitnessReportSheet.swift; sourceTree = "<group>"; };
 		4582FED62AB5AB700091F88D /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		4583C9062AB993F800B9741B /* ProfileBioDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBioDataView.swift; sourceTree = "<group>"; };
 		4584C5B52AA461B800405076 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		4584C5B72AA5DC8900405076 /* AllConnectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllConnectsView.swift; sourceTree = "<group>"; };
 		4584C5B92AA5DD3000405076 /* ConnectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectItemView.swift; sourceTree = "<group>"; };
@@ -224,6 +233,7 @@
 		45CF76752AB6FEC700D83E5F /* UploadedMusicSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedMusicSheetView.swift; sourceTree = "<group>"; };
 		45CF76772AB7A90100D83E5F /* UploadedProductsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedProductsSheetView.swift; sourceTree = "<group>"; };
 		45CF76792AB7A93A00D83E5F /* UploadedReportsSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedReportsSheetView.swift; sourceTree = "<group>"; };
+		45CF767B2AB9786C00D83E5F /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		45DC56A22AACFA0E00A31103 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		45E5DA272A9651EC0024A96D /* MembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersView.swift; sourceTree = "<group>"; };
 		45E5DA292A9652EF0024A96D /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
@@ -505,6 +515,7 @@
 				45CF76752AB6FEC700D83E5F /* UploadedMusicSheetView.swift */,
 				45CF76772AB7A90100D83E5F /* UploadedProductsSheetView.swift */,
 				45CF76792AB7A93A00D83E5F /* UploadedReportsSheetView.swift */,
+				456216452AB9CDC4005E393D /* UploadedEventsView.swift */,
 			);
 			path = Uploads;
 			sourceTree = "<group>";
@@ -547,6 +558,9 @@
 				45A3E25B2A65815F007CE9BE /* LoginView.swift */,
 				45A3E25D2A65816B007CE9BE /* RegisterView.swift */,
 				45A3E25F2A658175007CE9BE /* ProfileView.swift */,
+				4583C9062AB993F800B9741B /* ProfileBioDataView.swift */,
+				453EB22B2AB997550003A976 /* ProfileOccupationDataView.swift */,
+				456216432AB9B58E005E393D /* EditProfileOccupationSheet.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -560,6 +574,7 @@
 				45A3E2372A6568D7007CE9BE /* LottieView.swift */,
 				45A3A9122AA9F7DA00B1F6DF /* LoadingDialog.swift */,
 				45815E942AB5747D00E20CE7 /* UIViewControllerRepresenter.swift */,
+				45CF767B2AB9786C00D83E5F /* ToastView.swift */,
 			);
 			path = ViewsUtils;
 			sourceTree = "<group>";
@@ -729,6 +744,7 @@
 				45A3E2712A6592F2007CE9BE /* NewsItemData.swift in Sources */,
 				4597A3D22AB10075005811CB /* NewEventSheetView.swift in Sources */,
 				45A3E25C2A65815F007CE9BE /* LoginView.swift in Sources */,
+				453EB22C2AB997550003A976 /* ProfileOccupationDataView.swift in Sources */,
 				45E5DA2C2A96531E0024A96D /* AllMembersView.swift in Sources */,
 				45CCA00F2A651F450071C5C6 /* CITRARBApp.swift in Sources */,
 				45A3E2502A6580AC007CE9BE /* MarketPlaceViewModel.swift in Sources */,
@@ -740,6 +756,7 @@
 				4580F26D2AA63BE600DE775E /* NewConnectView.swift in Sources */,
 				4584C5BA2AA5DD3000405076 /* ConnectItemView.swift in Sources */,
 				4590D4072AAF394F00079224 /* EventsLandingView.swift in Sources */,
+				45CF767C2AB9786C00D83E5F /* ToastView.swift in Sources */,
 				45CF76782AB7A90100D83E5F /* UploadedProductsSheetView.swift in Sources */,
 				45CF767A2AB7A93A00D83E5F /* UploadedReportsSheetView.swift in Sources */,
 				4582FED72AB5AB700091F88D /* VideoPlayerView.swift in Sources */,
@@ -764,6 +781,7 @@
 				45CF76742AB6F8BE00D83E5F /* UploadedEyeWitnessReports.swift in Sources */,
 				4590D40C2AB0850A00079224 /* EventsData.swift in Sources */,
 				45E5DA312A9657C40024A96D /* MembersData.swift in Sources */,
+				4583C9072AB993F800B9741B /* ProfileBioDataView.swift in Sources */,
 				4582FED52AB598A00091F88D /* NewEyeWitnessReportSheet.swift in Sources */,
 				45E5DA282A9651ED0024A96D /* MembersView.swift in Sources */,
 				45A3E2602A658175007CE9BE /* ProfileView.swift in Sources */,
@@ -782,6 +800,7 @@
 				45A3E24C2A658081007CE9BE /* UploadsViewModel.swift in Sources */,
 				45E5DA2F2A9657B40024A96D /* MembersAPI.swift in Sources */,
 				4599C4342AB135C500576B2E /* MusicItemView.swift in Sources */,
+				456216462AB9CDC4005E393D /* UploadedEventsView.swift in Sources */,
 				4599C4382AB45EFB00576B2E /* NewMusicView.swift in Sources */,
 				45A3A9192AAA36EC00B1F6DF /* MarketPlaceData.swift in Sources */,
 				450115A32A7C1C3200DE07B4 /* FriendRequestItemView.swift in Sources */,
@@ -799,6 +818,7 @@
 				4582FECF2AB589DD0091F88D /* EyeWitnessReportLandingView.swift in Sources */,
 				45CF76722AB6F77000D83E5F /* UploadedMusicView.swift in Sources */,
 				45A3E2542A658106007CE9BE /* MembersViewModel.swift in Sources */,
+				456216442AB9B58E005E393D /* EditProfileOccupationSheet.swift in Sources */,
 				4599C42E2AB12E9600576B2E /* MusicData.swift in Sources */,
 				45A3E2382A6568D7007CE9BE /* LottieView.swift in Sources */,
 			);

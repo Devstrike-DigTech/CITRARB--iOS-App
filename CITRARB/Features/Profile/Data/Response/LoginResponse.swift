@@ -69,7 +69,7 @@ struct ProfileUser: Codable{
     let __v: Int
 }
 
-let ProfileOccupation: Codable{
+struct ProfileOccupation: Codable{
     let _id: String
     let name: String
     let jobTitle: String

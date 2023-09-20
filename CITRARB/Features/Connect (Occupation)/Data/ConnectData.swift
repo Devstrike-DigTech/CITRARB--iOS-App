@@ -44,8 +44,9 @@ struct NewConnect: Codable, Hashable{
     let category: String
     let description: String
     let userId: String
-    let active: Bool
+    let active: Bool?
     let _id: String
     let __v: Int
     
 }
+
