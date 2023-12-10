@@ -23,14 +23,8 @@ struct TVListItemView: View {
                     .font(.subheadline)
                     .padding(4)
             }
-            Spacer()
-            //.frame(height: 100)
-            .cornerRadius(30)
-            .shadow(color: TV_COLOR,radius: 1)
-            //.padding()
-            //.padding()
-        
-        
+                        .cornerRadius(30)
+           
     }
 }
 

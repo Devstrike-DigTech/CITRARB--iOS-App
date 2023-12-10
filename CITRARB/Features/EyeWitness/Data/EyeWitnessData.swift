@@ -23,7 +23,7 @@ struct EyeWitnessReport: Codable{
     let isVerified: Bool
     let createdAt: String
     let updatedAt: String
-    let reactions: [String]
+    let reactions: [Reaction]
     let id: String
     
 }
@@ -38,6 +38,14 @@ struct Reporter: Codable{
     let createdAt: String
     let updatedAt: String
     let __v: Int
+}
+
+struct Reaction: Codable{
+    let __v: Int
+    let _id: String
+    let rating: Int
+    let uploadId: String
+    let userId: String
 }
 
 

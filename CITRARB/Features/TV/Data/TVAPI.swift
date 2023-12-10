@@ -11,7 +11,7 @@ import SwiftUI
 
 class APIClient {
     func fetchTVList(completion: @escaping (Result<TVListResponse, Error>) -> Void) {
-        let urlString = "\(BASE_URL)tv?ksalf"
+        let urlString = "\(BASE_URL)tv"
         if let url = URL(string: urlString) {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let error = error {
